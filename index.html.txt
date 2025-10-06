@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Ventas</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background: #f3f3f3; }
+    input, select, button { margin: 5px; padding: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; background: white; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #ddd; }
+  </style>
+</head>
+<body>
+  <h2>Registro de Ventas - Market</h2>
+  <form id="ventaForm">
+    <select id="tipoDoc">
+      <option>Boleta</option>
+      <option>Factura</option>
+    </select>
+    <input id="cliente" placeholder="DNI o RUC">
+    <input id="producto" placeholder="Producto">
+    <input id="monto" type="number" placeholder="Monto">
+    <button type="submit">Guardar</button>
+  </form>
+
+  <table id="tabla">
+    <thead><tr><th>Fecha</th><th>Doc</th><th>Cliente</th><th>Producto</th><th>Monto</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById("ventaForm");
+    const tabla = document.querySelector("#tabla tbody");
+    let ventas = JSON.parse(localStorage.getItem("ventas") || "[]");
+
+    function mostrar() {
+      tabla.innerHTML = "";
+      ventas.forEach(v => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${v.fecha}</td><td>${v.doc}</td><td>${v.cliente}</td><td>${v.prod}</td><td>${v.monto}</td>`;
+        tabla.appendChild(tr);
+      });
+    }
+
+    form.onsubmit = e => {
+      e.preventDefault();
+      const venta = {
+        fecha: new Date().toLocaleString(),
+        doc: tipoDoc.value,
+        cliente: cliente.value,
+        prod: producto.value,
+        monto: monto.value
+      };
+      ventas.push(venta);
+      localStorage.setItem("ventas", JSON.stringify(ventas));
+      mostrar();
+      form.reset();
+    };
+
+    mostrar();
+  </script>
+</body>
+</html>

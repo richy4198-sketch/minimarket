@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimarket Petronort</title>
+    <style>
+        /* Tus estilos originales */
+        :root {
+            --color-rojo: #B20719;
+            --color-azul: #172B4D;
+            --color-gris-claro: #F0F0F0;
+            --color-gris-oscuro: #707070;
+            --color-fondo: #FFFFFF;
+        }
+        body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 20px; background: var(--color-fondo); color: #333; }
+        h1 { text-align: center; color: var(--color-azul); }
+        .logo-container { text-align: center; margin-bottom: 10px; }
+        .logo-container img { width: 250px; height: auto; border-radius: 8px; margin-bottom: 10px; }
+        .form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; background: var(--color-gris-claro); padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        input, select, button { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
+        input, select { background: var(--color-fondo); color: #333; }
+        button#guardar { background: var(--color-rojo); color: white; cursor: pointer; transition: background-color 0.2s; font-weight: bold; }
+        button#guardar:hover { background: #D52B43; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--color-fondo); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        th, td { padding: 12px 10px; text-align: center; border-bottom: 1px solid var(--color-gris-claro); color: #333; }
+        th { background: var(--color-azul); color: white; }
+        td button { background: transparent; border: 1px solid var(--color-gris-oscuro); color: var(--color-gris-oscuro); padding: 5px 8px; }
+        td button:hover { background: #ffe6e6; border-color: var(--color-rojo); }
+        .total { text-align: right; margin-top: 15px; padding: 10px; font-size: 18px; font-weight: bold; color: var(--color-azul); background: var(--color-gris-claro); border-radius: 10px; }
+        .search { display: flex; justify-content: center; margin: 15px 0; }
+        .search input { width: 50%; min-width: 250px; }
+        ::placeholder { color: var(--color-gris-oscuro); opacity: 1; }
+    </style>
+</head>
+<body>
+
+<div class="logo-container">
+    <img src="logo.jpeg" alt="Logo Minimarket Petronort">
+</div>
+
+<h1>Minimarket Petronort</h1>
+
+<div class="form">
+    <select id="tipoDoc">
+        <option>Boleta</option>
+        <option>Factura</option>
+    </select>
+    <input id="cliente" placeholder="DNI o RUC" onblur="consultarCliente(this.value)">
+    <input id="nombreCliente" placeholder="Nombre del Cliente" readonly>
+
+    <select id="producto" onchange="setPrecio()">
+        <option value="">-- Selecciona producto --</option>
+        <option value="2.5">Inka Kola 500ml</option>
+        <option value="4.5">Inka Kola 1L</option>
+        <option value="3.5">Coca Cola 500ml</option>
+        <option value="5.0">Coca Cola 1L</option>
+        <option value="2.0">Galleta Oreo</option>
+        <option value="2.0">Galleta Casino</option>
+        <option value="1.0">Chupetín</option>
+        <option value="1.0">Chicle Kataboom</option>
+        <option value="1.0">Chicle Huevitos</option>
+        <option value="1.0">Chicle Bolita</option>
+        <option value="1.5">Chicle Boogie</option>
+        <option value="2.5">Chicle Trident 14</option>
+        <option value="2.0">Chicle Trident 5</option>
+        <option value="1.0">Fruna</option>
+        <option value="3.0">Lentejitas</option>
+        <option value="2.0">Bubbaloo Sparkies</option>
+        <option value="1.5">Chiclets</option>
+        <option value="1.5">Halls</option>
+        <option value="1.0">Mentitas</option>
+        <option value="1.5">Full</option>
+        <option value="1.5">Next</option>
+        <option value="3.5">Ajinomen</option>
+        <option value="2.5">Ducales</option>
+        <option value="2.0">Salticas</option>
+        <option value="2.5">Gretel</option>
+        <option value="2.0">Field</option>
+        <option value="2.5">Chizito</option>
+        <option value="2.0">Trululu</option>
+        <option value="1.5">Paleta Picolines</option>
+        <option value="3.0">Globo pop led</option>
+        <option value="1.0">Chin chin</option>
+        <option value="2.5">Mecano</option>
+        <option value="2.0">Que loco</option>
+        <option value="3.5">Volt</option>
+        <option value="7.0">Mike's</option>
+    </select>
+
+    <input id="monto" placeholder="Monto S/" type="number" step="0.01">
+    <button id="guardar">💾 Guardar</button>
+</div>
+
+<div class="search">
+    <input id="buscar" placeholder="Buscar por producto o cliente...">
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Doc</th>
+            <th>DNI/RUC</th>
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Monto</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+</table>
+
+<div class="total" id="total">Total del día: S/ 0.00</div>
+
+<script>
+    // VARIABLES GLOBALES
+    const guardarBtn = document.getElementById("guardar");
+    const tabla = document.getElementById("tabla");
+    const totalDiv = document.getElementById("total");
+    const buscar = document.getElementById("buscar");
+    const tipoDoc = document.getElementById("tipoDoc");
+    const cliente = document.getElementById("cliente"); 
+    const nombreCliente = document.getElementById("nombreCliente"); 
+    const producto = document.getElementById("producto");
+    const monto = document.getElementById("monto");
+
+    let ventas = JSON.parse(localStorage.getItem("ventas") || "[]");
+
+    // ⚡ PROXY BACKEND LOCAL
+    const PROXY_BASE = 'http://localhost:3000';
+
+    // FUNCIÓN PARA CONSULTAR DNI/RUC
+    async function consultarCliente(numero) {
+        nombreCliente.value = ""; 
+        nombreCliente.readOnly = true;
+        const num = numero.trim();
+
+        if (num.length !== 8 && num.length !== 11) {
+            nombreCliente.placeholder = "DNI/RUC inválido";
+            return;
+        }
+
+        nombreCliente.placeholder = "Consultando...";
+
+        try {
+            const response = await fetch(`${PROXY_BASE}/consultar/${num}`);
+            const data = await response.json();
+
+            if (data.success) {
+                let nombre;
+                if (num.length === 8) {
+                    nombre = `${data.nombres} ${data.apellidoPaterno} ${data.apellidoMaterno}`;
+                } else {
+                    nombre = data.razonSocial;
+                }
+                nombreCliente.value = nombre.trim();
+                nombreCliente.readOnly = true;
+            } else {
+                nombreCliente.value = "";
+                nombreCliente.placeholder = "No encontrado. Ingrese el nombre manual.";
+                nombreCliente.readOnly = false;
+            }
+        } catch (error) {
+            console.error("Error al consultar API:", error);
+            nombreCliente.value = "";
+            nombreCliente.placeholder = "Error de conexión. Ingrese el nombre manual.";
+            nombreCliente.readOnly = false;
+        }
+    }
+
+    function setPrecio() {
+        const select = document.getElementById("producto");
+        const precio = select.value;
+        const nombre = select.options[select.selectedIndex].text;
+        monto.value = precio ? parseFloat(precio).toFixed(2) : "";
+        select.dataset.nombre = nombre;
+    }
+
+    function guardarVenta() {
+        const tipo = tipoDoc.value.trim();
+        const cli_doc = cliente.value.trim(); 
+        const cli_nombre = nombreCliente.value.trim(); 
+        const select = document.getElementById("producto");
+        const prod = select.dataset.nombre || select.options[select.selectedIndex].text.trim();
+        const mon = parseFloat(monto.value);
+        
+        if (!cli_doc || !cli_nombre || !prod || !mon) return alert("Completa todos los campos (DNI/RUC, Nombre del Cliente y Producto/Monto)");
+
+        const venta = {
+            id: Date.now(),
+            fecha: new Date().toLocaleString(),
+            tipo,
+            cli_doc, 
+            cli_nombre, 
+            prod,
+            mon
+        };
+        ventas.push(venta);
+        localStorage.setItem("ventas", JSON.stringify(ventas));
+        mostrarVentas();
+        limpiarCampos();
+    }
+
+    function eliminarVenta(id) {
+        if (!confirm("¿Eliminar venta?")) return;
+        ventas = ventas.filter(v => v.id !== id);
+        localStorage.setItem("ventas", JSON.stringify(ventas));
+        mostrarVentas();
+    }
+
+    function mostrarVentas(filtro = "") {
+        tabla.innerHTML = "";
+        let total = 0;
+        const filtroLower = filtro.toLowerCase();
+
+        ventas
+            .filter(v => 
+                v.prod.toLowerCase().includes(filtroLower) || 
+                v.cli_doc.includes(filtro) ||
+                v.cli_nombre.toLowerCase().includes(filtroLower)
+            )
+            .forEach(v => {
+                total += v.mon;
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${v.fecha}</td>
+                    <td>${v.tipo}</td>
+                    <td>${v.cli_doc}</td> 
+                    <td>${v.cli_nombre}</td> 
+                    <td>${v.prod}</td>
+                    <td>S/ ${v.mon.toFixed(2)}</td>
+                    <td><button onclick="eliminarVenta(${v.id})">🗑️</button></td>`;
+                tabla.appendChild(tr);
+            });
+        totalDiv.textContent = "Total del día: S/ " + total.toFixed(2);
+    }
+
+    function limpiarCampos() {
+        cliente.value = "";
+        nombreCliente.value = "";
+        nombreCliente.readOnly = true;
+        nombreCliente.placeholder = "Nombre del Cliente";
+        producto.selectedIndex = 0;
+        monto.value = "";
+    }
+
+    guardarBtn.onclick = guardarVenta;
+    buscar.oninput = e => mostrarVentas(e.target.value);
+    mostrarVentas();
+    limpiarCampos();
+    setPrecio();
+</script>
+</body>
+</html>
