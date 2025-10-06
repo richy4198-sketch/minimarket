@@ -1,0 +1,4027 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Registrar Ventas</title>
+
+<link rel="shortcut icon" href="../../images/logo_favicon.ico" type="image/x-icon"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"><link rel="stylesheet" type="text/css" href="../../css/fontawesome/fontawesome_5.10.2.min.css"><link rel="manifest" href="../manifest.json"><script type="text/javascript" src="../../js/jquery-3.6.2/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="../../css/estilo/defecto.css"><link rel="stylesheet" type="text/css" href="../../css/estilo/menu_estilo.css"><link rel="stylesheet" type="text/css" href="../../css/bootstrap/botones_modern.css"><link rel="stylesheet" type="text/css" href="../../css/bootstrap/alerts_modern.css"><link rel="stylesheet" type="text/css" href="../../css/bootstrap/badges_modern.css"><script type="text/javascript" src="../../js/jquery-3.6.2/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="../../js/jquery-ui-1.13.2/custom/jquery-ui.min.css"><link rel="stylesheet" type="text/css" href="../../js/jquery-ui-1.13.2/custom/jquery-ui.theme.min.css"><script type="text/javascript" src="../../js/jquery-ui-1.13.2/custom/jquery-ui.min.js"></script>
+			<script type="text/javascript">
+			$.datepicker.regional['es'] = {
+		        closeText: 'Cerrar',
+		        prevText: '< Ant',
+		        nextText: 'Sig >',
+		        currentText: 'Hoy',
+		        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+		        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+		        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+		        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+		        weekHeader: 'Sm',
+		        dateFormat: 'dd/mm/yy',
+		        firstDay: 1,
+		        isRTL: false,
+		        showMonthAfterYear: false,
+		        yearSuffix: ''
+		    };
+
+		    $.datepicker.setDefaults($.datepicker.regional['es']);
+
+		    $.extend($.ui.dialog.prototype.options, {
+				create: function(ev, ui) {
+					buttonClose = $(this.previousElementSibling.children[1]);
+					buttonClose.find('span').remove();
+					buttonClose.removeClass('ui-widget ui-button-icon-only').text('');
+					buttonClose.append('<i class="fa fa-times"></i>');
+				}
+			});
+		    </script><link rel="stylesheet" type="text/css" href="../../js/tablesorter/dist/css/theme.custom.min.css"><script type="text/javascript" src="../../js/tablesorter/dist/js/jquery.tablesorter.min.js"></script><script type="text/javascript" src="../../js/tablesorter/dist/js/parsers/parser-onlydate.min.js"></script><script type="text/javascript" src="../../js/tablesorter/dist/js/parsers/parser-datetime.min.js"></script><script type="text/javascript" src="../../js/jquery-validation-1.19.5/dist/jquery.validate.js"></script><script type="text/javascript" src="../../js/jquery-validation-1.19.5/dist/additional-methods.js"></script><script type="text/javascript" src="../../js/jquery-validation-1.19.5/dist/localization/messages_es.js"></script><script type="text/javascript" src="../../js/buttoncs/buttonCs.js"></script><link rel="stylesheet" type="text/css" href="../../css/bootstrap/widgets_modern.css"><link rel="stylesheet" type="text/css" href="../../css/estilo/plantilla.css"><script type="text/javascript" src="../../js/efectoButtonCss/efectoButtonCss.js"></script><script type="text/javascript" src="../../js/backGroundTotales/backGroundTotales.js" defer=""></script><link rel="stylesheet" type="text/css" href="../../css/estilo/estilo_form.css"><link rel="stylesheet" type="text/css" href="../../js/select2/dist/css/select2.min.css"><script type="text/javascript" src="../../js/select2/dist/js/select2.min.js"></script><script type="text/javascript" src="../../js/autoco/autoco.js"></script><script type="text/javascript" src="../../js/moneda/autoNumeric.js"></script><script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script><style>.cke{visibility:hidden;}</style><script type="text/javascript" src="../../js/ckeditor/adapters/jquery.js"></script><link rel="stylesheet" type="text/css" href="../../js//jQuery-File-Upload-master/css/jquery.fileupload.css"><link rel="stylesheet" type="text/css" href="../../js//jQuery-File-Upload-master/css/jquery.fileupload-ui.css"><script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script><script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script><script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script><script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script><script type="text/javascript" src="../../js//jQuery-File-Upload-master/js/jquery.fileupload.js"></script><script type="text/javascript" src="../../js//jQuery-File-Upload-master/js/jquery.fileupload-process.js"></script><script type="text/javascript" src="../../js//jQuery-File-Upload-master/js/jquery.fileupload-image.js"></script><script type="text/javascript" src="../../js//jQuery-File-Upload-master/js/jquery.fileupload-validate.js"></script><script type="text/javascript" src="../../js//jQuery-File-Upload-master/js/jquery.fileupload-ui.js"></script><link rel="stylesheet" type="text/css" href="../../js/VenoBox/dist/venobox.min.css"><script type="text/javascript" src="../../js/VenoBox/dist/venobox.min.js"></script><script type="text/javascript">$(function() { $.fn.button.noConflict(); });</script><script type="text/javascript" src="../../js/bootstrap/bootstrap.bundle.min.js"></script><link rel="stylesheet" type="text/css" href="../../css/bootstrap/toast_modern.css"><link rel="stylesheet" type="text/css" href="../../js/select2/dist/css/select2.min.css"><script type="text/javascript" src="../../js/select2/dist/js/select2.min.js"></script><link rel="stylesheet" type="text/css" href="../../css/timepicker/jquery-ui-timepicker-addon.css"><script type="text/javascript" src="../../js/timepicker/jquery-ui-timepicker-addon.js"></script><script type="text/javascript" src="../../js/timepicker/localization/jquery-ui-timepicker-es.js"></script><link rel="stylesheet" type="text/css" href="../../js/uploadifive/uploadifive.css"><script type="text/javascript" src="../../js/uploadifive/jquery.uploadifive.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="estilo_form.css"> -->
+<script type="text/javascript" src="../fe_sincronizacion/sincronizar.js"></script>
+
+<script type="text/javascript">
+	
+	function venta_filtro()
+	{
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_filtro.php",
+			async:true,
+			dataType: "html",
+			//data: ({
+				//venta: $('#txt_fil_pro').val()
+			//}),
+			beforeSend: function() {
+				$('#div_venta_filtro').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_filtro').html(html);
+			},
+			complete: function(){
+				// venta_tabla();
+			}
+		});
+	}
+
+	function venta_tabla()
+	{
+		$.ajax({
+			type: "POST",
+			url: 'venta_tabla.php',
+			async:true,
+			dataType: "html",
+			data: $("#for_fil_ven").serialize(),
+			beforeSend: function(){
+				$('#msj_venta_tabla').html("Cargando datos ...");
+				$('#msj_venta_tabla').show(100);
+				$('#div_venta_tabla').addClass("ui-state-disabled");
+			},
+			success: function(html){
+				$('#div_venta_tabla').html(html);
+			},
+			complete: function(){
+				$('#div_venta_tabla').removeClass("ui-state-disabled");
+				$('#msj_venta_tabla').hide(100);
+			}
+		}); 
+	}
+		
+	function venta_form(act,idf){
+		$.ajax({
+			type: "POST",
+			url: 'venta_form.php',
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				ven_id:	idf
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_form').dialog("open");
+				$('#div_venta_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_form').html(html);
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	//REGISTRO DE VENTA
+	function venta_form1(act,idf){
+
+		
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_form1.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				ven_id:	idf
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_form1').dialog("open");
+				$('#div_venta_form1').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_form1').html(html);
+			}
+		});
+	}
+
+	//REGISTRO DE VENTA02
+	function venta_form2(act,idf){
+		
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_form2.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				ven_id:	idf
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_form2').dialog("open");
+				$('#div_venta_form2').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_form2').html(html);
+			}
+		});
+	}
+
+	function venta_modal_det(idp, nomp, codp){
+		
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_modal_det.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				prodId: idp,
+				prodNom: nomp,
+				prodCod: codp
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_modal_det').dialog("open");
+				$('#div_venta_modal_det').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_modal_det').html(html);
+			}
+		});
+	}
+
+	function venta_anular(id,texto,p_motivo){
+		$('#confirmModalAnulacion').data('id', id);
+		$('#confirmModalAnulacion').data('motivo', p_motivo);
+		$('#confirmModalAnulacion').find('#title').html( "Anulación de venta "+texto+"<br><br>");
+		$('#confirmModalAnulacion').dialog('open');
+	}
+
+	function procesar_anulacion() {
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_anular.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				action:	"anular",
+				ven_id:	$('#confirmModalAnulacion').data('id'),
+				motivo: $('#confirmModalAnulacion').data('motivo') || $("#txt_mot_anu").val()
+			}),
+			beforeSend: function() {
+				$('#msj_venta').html("Cargando...");
+				$('#msj_venta').show(100);
+			},
+			success: function(data){
+				$('#msj_venta').html(data.msj);
+				if(data.est) {
+											if (data.dat.combaj_id != undefined && data.dat.combaj_id > 0) {
+							cb_cpe_ejecutar(data.dat, 'combaj_id', 'fe_combaja');
+						}
+						if (data.dat.resbol_id != undefined && data.dat.resbol_id > 0) {
+							cb_cpe_ejecutar(data.dat, 'resbol_id', 'fe_resumenboleta');
+						}
+										
+									}
+			},
+			complete: function(){
+				//$("#chk_ven_anu").removeAttr("checked");
+				setTimeout(()=>{$('#msj_venta').hide(100);},5000); 
+				venta_tabla();
+			}
+		});
+	}
+
+	function venta_buscar_numdoc(id)
+	{
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_buscar_numdoc.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				action:	"anular",
+				ven_id:	id
+			}),
+			beforeSend: function() {
+				$('#msj_venta').html("Cargando...");
+				$('#msj_venta').show(100);
+			},
+			success: function(data){
+				if(data.est == true && data.dat.docele == 1) {
+					cpe_anular_send(data.dat.ser,data.dat.cor);
+				}
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	function cb_cpe_ejecutar(dataResponse, key, modulo)
+	{
+		var oData = {};
+		oData[key] = dataResponse[key];
+
+		$.ajax({
+			type: "POST",
+			url: "../"+modulo+"/cpe_ejecutar.php",
+			async: false,
+			dataType: "json",
+			data: oData,
+			beforeSend: function() {
+				$('#msj_venta_sunat').html("Enviando a SUNAT...");
+				$('#msj_venta_sunat').show(100);
+				showAlert('Generando documento...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat').html(data.msj);
+				$('#msj_venta_sunat').show();
+				showAlert(data.msj,data.est);
+
+				setTimeout(function(){
+					cb_cpe_ticket(dataResponse[key], data.dat.ticket, modulo);
+				}, 1000);
+			}
+		});
+	}
+
+	function cb_cpe_ticket(id,tick,modulo)
+	{
+		$.ajax({
+			type: "POST",
+			url: "../"+modulo+"/cpe_ticket.php",
+			async:false,
+			dataType: "json",
+			data: ({
+				id:			id,
+				ticket:		tick
+			}),
+			beforeSend: function() {
+				$('#msj_venta_sunat2').html("Consultando...");
+				$('#msj_venta_sunat2').show(100);
+				showAlert('Consultando Ticket...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat2').html(data.msj);
+				$('#msj_venta_sunat2').show();
+				showAlert(data.msj,data.est);
+			},
+			complete: function(){
+				setTimeout(()=>{venta_tabla()},500);
+			}
+		});
+	}
+
+	function cpe_ejecutar(ecomid,venid,imp,is_button=true)
+	{
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_ejecutar.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_id: ecomid
+			}),
+			beforeSend: function() {
+				$('#msj_venta_sunat').html("Enviando...");
+				$('#msj_venta_sunat').show(100);
+				//showAlert('Generando documento...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat').html(data.msj);
+				$('#msj_venta_sunat').show();
+				showAlert(data.msj,data.est,10000);
+
+				if(data.dat.enviar=='1') {
+					setTimeout(function(){ 
+						// cpe_ejecutar2(ecomid,'',is_button);
+					}, 3000);
+				} else {
+					if (is_button) venta_tabla();
+				}
+			},
+			complete: function(){
+				// if(imp=='imprime'){
+					//venta_impresion(venid);
+				// }
+			}
+		});
+	}
+
+	function cpe_ejecutar2(ecomid,imp,is_button)
+	{
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_ejecutar.php",
+			async:false,
+			dataType: "json",
+			data: ({
+				ecom_id: ecomid
+			}),
+			beforeSend: function() {
+				$('#msj_venta_sunat').html("Enviando...");
+				$('#msj_venta_sunat').show(100);
+				//showAlert('Generando documento...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat').html(data.msj);
+				$('#msj_venta_sunat').show();
+				showAlert(data.msj,data.est);
+			},
+			complete: function(){
+				if (is_button) venta_tabla();
+			}
+		});
+	}
+	
+	function venta_impresion(idf){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_preimpresion.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				ven_id:	idf
+			}),
+			beforeSend: function() {
+				$('#div_venta_impresion').dialog("open");
+				$('#div_venta_impresion').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_impresion').html(html);
+			}
+		});
+	}
+
+	function venta_imppos_datos(id_ven, conf, reimp){
+		var confirmar = conf || 'N';
+		var imp = true;
+		if(confirmar == 'S'){
+			if(confirm("Confirme la impresión del ticket?")){
+				imp = true;
+			}else{
+				imp = false;
+			}
+		}
+		
+		if(imp == true){
+			$.ajax({
+				type: "POST",
+				url: "../venta/venta_imppos_datos.php",
+				async:true,
+				dataType: "json",
+				data: ({
+					ven_id:	id_ven,
+					num_copias: $('#txt_num_cop').length == 0 ? "1" : $('#txt_num_cop').val(),
+					reimp: reimp || 0
+				}),
+				beforeSend: function() {
+					//$('#msj_venta').html("Imprimiendo...");
+					//$('#msj_venta').show(100);
+				},
+				success: function(data){
+					if(data.tipimp == 0){
+						if (!qz.websocket.isActive()) {
+							updateState('Esperando', 'default');
+							qz.websocket.connect().then(function() {
+								print_file_qz(data, data.imp_doc);
+							});
+						}else{
+							print_file_qz(data, data.imp_doc);
+						}
+						venta_imppos_ticketventa(data);
+						// $('#div_venta_form').dialog("close");
+						// $('#div_venta_impresion').dialog("close");
+					}
+					else if(data.tipimp == 1){
+						// impresion de hostign
+						venta_imppos_comprobante(data,data.url_loc)
+						//impresion local
+						// venta_imppos_comprobante(data,data.imp_doc)
+					}
+				}
+			});
+		}
+	}
+
+	function venta_imppos_comprobante(datos,url_loc){
+		$.ajax({
+			type: "POST",
+			url: url_loc,
+			async:true,
+			dataType: "json",                      
+			data: datos,
+			beforeSend: function(){
+				console.log(datos);
+			},
+			success: function(data){
+				// if(datos.action == undefined){
+					// venta_impresion_interna(data,url_loc)
+				// }
+				//$('#msj_venta_imp').html(html);
+			}
+		});
+	}
+
+	function venta_impresion_interna(dattic,url_loc){
+		// console.log(dattic)
+		$.ajax({
+			type: "POST",
+			url: '../ventadoc/impresion_interna.php',
+			async:true,
+			dataType: "json",                      
+			data: {
+				// file: 64ee39e6baa0c.txt
+				imp_ip:		dattic.imp_ip,
+				imp_nom:	dattic.imp_nom,
+				urlarc:		dattic.urlarc
+			},
+			beforeSend: function(){
+				// console.log(datos);
+			},
+			success: function(data){
+				console.log(data)
+				if(data.est){
+					let datos = {
+						action: 'remove',
+						filename: dattic.file
+					};
+					venta_imppos_comprobante(datos,url_loc)
+				}
+				// $('#msj_venta_imp').html(html);
+			}
+		});
+	}
+
+	function venta_imppos_ticketventa(data) {
+		if (data.imprime_ticketventa) {
+			if (!qz.websocket.isActive()) {
+				updateState('Esperando', 'default');
+				qz.websocket.connect().then(function() {
+					print_file_qz(data.ticketventa, data.ticketventa.imp_doc);
+				});
+			}else{
+				print_file_qz(data.ticketventa, data.ticketventa.imp_doc);
+			}
+		}
+	}
+
+	function venta_imppos_venta_datos(){
+		// if(confirm("Confirma la impresión del documento?"))
+		// {
+			$.ajax({
+				type: "POST",
+				url: "venta_imppos_venta_datos.php",
+				async:true,
+				dataType: "json",
+				data: $("#for_fil_ven").serialize(),
+				beforeSend: function() {
+					//alert($("#for_fil_ven").serialize());
+					//$('#msj_venta').html("Imprimiendo...");
+					//$('#msj_venta').show(100);
+				},
+				success: function(data){
+					venta_imppos_venta(data);
+				}
+			});
+		//}
+	}
+
+	function venta_imppos_venta(datos){
+		$.ajax({
+			type: "POST",
+			url: '../venta/venta_imppos_venta.php',
+			async:true,
+			dataType: "html",
+			data: datos,
+			beforeSend: function() {
+				$('#msj_venta_imp').html("Imprimiendo...");
+				$('#msj_venta_imp').show(100);
+			},
+			success: function(html){
+				$('#msj_venta_imp').html(html);
+			}
+		});
+	}
+
+	function venta_enviar_whatsapp(conten, doc, urlcom, urlsit, cli_id, mod_id, mod_ide) {
+		$.ajax({
+			type: "POST",
+			url: "venta_form_enviowsp.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				conten:		conten,
+				doc:		doc,
+				urlcom:		urlcom,
+				urlsit:		urlsit,
+				cli_id:		cli_id,
+				mod_id:		mod_id,
+				mod_ide:	mod_ide,
+				vista:		'venta'
+			}),
+			beforeSend: function() {
+				$('#div_venta_enviowsp_form').dialog("open");
+				$('#div_venta_enviowsp_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_enviowsp_form').html(html);
+				$('#txt_cli_tel').focus();
+			}
+		});
+	}
+
+	function venta_correo_form(act,venid){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_correo_form.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				ven_id: venid
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_correo_form').dialog("open");
+				$('#div_venta_correo_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_correo_form').html(html);
+			}
+		});
+	}
+
+	function venta_correo_modal(act,venid){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_correo_form_modal.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				ven_id: venid
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_correo_form_modal').dialog("open");
+				$('#div_venta_correo_form_modal').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_correo_form_modal').html(html);
+			}
+		});
+	}
+
+	function venta_correo_email(ven_id){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_correo_email.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				ven_id:	ven_id
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_email').dialog("open");
+				$('#div_venta_email').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_email').html(html);
+			}
+		});
+	}
+
+	function ingreso_form(act,id_vp,ing_id){
+		$.ajax({
+			type: "POST",
+			url: "ingreso_form.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				venpag_id : id_vp,
+				ing_id : ing_id,
+				vista: 'venta_form'
+			}),
+			beforeSend: function() {
+				$('#msj_ingreso').hide();
+				$('#div_ingreso_form').dialog("open");
+				$('#div_ingreso_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_ingreso_form').html(html);
+			},
+			complete: function(html){
+			}
+		});
+	}
+
+	function venta_alert_mon(p_datc, p_mont){
+		$.ajax({
+			type: "POST",
+			url: "venta_tabla_alert_mon.php",
+			async:true,
+			dataType: "html", 
+			data: {
+				dat_caj: p_datc,
+				mon_tot: p_mont
+			},
+			beforeSend: function() {
+				$('#div_venta_alert_mon').dialog("open");
+				$('#div_venta_alert_mon').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_alert_mon').html(html);
+			}
+		});
+	}
+
+	function ingreso_imppos_datos(idf){
+		if(confirm("Desea imprimir éste documento?")){
+			$.ajax({
+				type: "POST",
+				url: "../ingreso/ingreso_imppos_datos.php",
+				async:true,
+				dataType: "json",
+				data: ({ ing_id: idf}),
+				beforeSend: function() {
+					//$('#msj_venta').html("Imprimiendo...");
+					//$('#msj_venta').show(100);
+				},
+				success: function(data){
+					if (!qz.websocket.isActive()) {
+						updateState('Esperando', 'default');
+						qz.websocket.connect().then(function() {
+							print_file_qz(data,data.imp_doc);
+						});
+					}else{
+						print_file_qz(data,data.imp_doc);
+					}
+				}
+			});
+		}
+	}
+
+	//Confirmación por usuario
+	function confirmacion_form(fun_nom, for_nom, mot_anu, usu_per){
+		$.ajax({
+			type: "POST",
+			url: "../confirmacion/confirmacion_form.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				for_nom: for_nom,
+				fun_nom: fun_nom,
+				mot_anu: mot_anu || '0',
+				usu_per: usu_per
+			}),
+			beforeSend: function() {
+				$('#msj_venta_reg').hide();
+				$('#div_confirmacion_form').dialog("open");
+				$('#div_confirmacion_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_confirmacion_form').html(html);
+			},
+			complete: function(){
+
+			}
+		});
+	}
+
+	function preguntar_anulacion(id, texto) {
+		var motivo = prompt("Ingrese motivo de anulación", "");
+
+		while (motivo != null && motivo.trim() == "") {
+			motivo = prompt("Ingrese motivo de anulación", "");
+		}
+
+		if (motivo != null && motivo.trim() != "") {
+			venta_anular(id, texto, motivo.trim());
+		}
+	}
+
+	function confirmacion_anulacion(id,texto, usu_per){
+		confirmacion_form("venta_anular('"+id+"','"+texto+"')",'','', usu_per);
+	}
+
+	function cpe_facturador(ecom_id){
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_facturador.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_id: ecom_id
+			}),
+			beforeSend: function() {
+				// showAlert('consultando',true,10000);
+			},
+			success: function(data){
+				showAlert(data.msj,data.est,5000);
+				if(data.est){
+					cpe_facturador_send(data.dat);
+				}
+			},
+			complete: function(){
+			}
+		});
+	}
+	
+	function cpe_facturador_send(ecom_dat){
+		$.ajax({
+			type: "POST",
+			url: "/modulos/cpe/send1.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_dat: ecom_dat
+			}),
+			beforeSend: function() {
+				// showAlert('enviando al API',true,10000);
+			},
+			success: function(data){
+				if(data.est){
+					cpe_ejecutar_facturador(data.dat.ser,data.dat.cor);
+				}else{
+					showAlert(data.msj,data.est,10000);
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				showAlert('No se pudo enviar el comprobante electrónico, ya que no hay conexión',false,10000);
+			},
+			complete: function(){
+			}
+		});
+	}
+	
+	function cpe_ejecutar_facturador(ecom_ser,ecom_cor){
+		$.ajax({
+			type: "POST",
+			url: "/modulos/venta/cpe_ejecutar.php",
+			async:true,
+			dataType: "JSON",
+			data: ({
+				ecom_ser: ecom_ser,
+				ecom_cor: ecom_cor
+			}),
+			beforeSend: function() {
+				showAlert('Generando documento...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat').html(data.msj);
+				$('#msj_venta_sunat').show();
+				showAlert(data.msj,data.est,10000);
+				
+				if(data.est){//
+					//copiar xml del hostign
+					cpe_copiar_xml(data.dat.nomarc)
+					cpe_actualizar_local(ecom_ser, ecom_cor, data.dat.faultcode, data.dat.digvalue, data.dat.signvalue, data.dat.valid, data.dat.estsun, data.dat.fecenvsun);
+				}
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	function cpe_actualizar_local(ecom_ser, ecom_cor, faultcode, digvalue, signvalue, valid, estsun, fecenvsun){
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_actualizar.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_ser:	ecom_ser,
+				ecom_cor:	ecom_cor,
+				faultcode:	faultcode,
+				digvalue:	digvalue,
+				signvalue:	signvalue,
+				valid:		valid,
+				estsun:		estsun,
+				fecenvsun:	fecenvsun
+			}),
+			beforeSend: function() {
+				// showAlert('consultando',true,10000);
+			},
+			success: function(data){
+				// showAlert(data.msj,data.est,10000);
+				if(data.est){
+					// cpe_facturador_send(data.dat);
+				}
+			},
+			complete: function(){
+				venta_tabla();
+			}
+		});
+	}
+	
+	function cpe_anular_send(ecom_ser,ecom_cor){
+		$.ajax({
+			type: "POST",
+			url: "/modulos/cpe/cpe_anular.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_ser: ecom_ser,
+				ecom_cor: ecom_cor
+			}),
+			beforeSend: function() {
+				showAlert('Anulando documento en el API...');
+			},
+			success: function(data){
+				showAlert(data.msj,data.est,10000);
+				if(data.est){
+					if(data.dat.combaj_id > 0){
+						cpe_ejecutar_combaja(data.dat.combaj_id, ecom_ser, ecom_cor);
+					}
+				}
+			},
+			error: function(){
+				showAlert('No se pudo anular el comprobante electrónico, ya que no hay conexión',false,10000);
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	function cpe_ejecutar_combaja(combaj_id, ecom_ser, ecom_cor){
+		$.ajax({
+			type: "POST",
+			url: "/modulos/fe_combaja/cpe_ejecutar.php",
+			async:true,
+			dataType: "JSON",
+			data: ({
+				combaj_id: combaj_id
+			}),
+			beforeSend: function() {
+				showAlert('Generando comunicación de baja...');
+			},
+			success: function(data){
+				$('#msj_venta_sunat').html(data.msj);
+				$('#msj_venta_sunat').show();
+				showAlert(data.msj,data.est,10000);
+				
+				if(data.est){
+					cpe_actualizar_anular_local(ecom_ser, ecom_cor, data.dat.faultcode, data.dat.estsun, data.dat.fecenvsun);
+				}
+			},
+			error: function(){
+				showAlert('No se pudo enviar la comunicación de baja, ya que no hay conexión',false,10000);
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	function cpe_actualizar_anular_local(ecom_ser, ecom_cor, faultcode, estsun, fecenvsun){
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_actualizar_anular.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_ser:	ecom_ser,
+				ecom_cor:	ecom_cor,
+				faultcode:	faultcode,
+				estsun:		estsun,
+				fecenvsun:	fecenvsun
+			}),
+			beforeSend: function() {
+				// showAlert('consultando',true,10000);
+			},
+			success: function(data){
+				showAlert(data.msj,data.est,10000);
+				if(data.est){
+				}
+			},
+			complete: function(){
+				venta_tabla();
+			}
+		});
+	}
+
+	function cpe_copiar_xml(nomarc){
+		$.ajax({
+			type: "POST",
+			url: "../venta/cpe_copiar_xml.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				nomarc:	nomarc
+			}),
+			beforeSend: function() {
+				// showAlert('Buscando xml',true,10000);
+			},
+			success: function(data){
+				// showAlert(data.msj,data.est,10000);
+				if(data.est){
+					// cpe_facturador_send(data.dat);
+				}
+			},
+			complete: function(){
+			}
+		});
+	}
+	
+	function verificar_onsubmit() {
+					show_espera('Guardando la venta. Por favor, espere...', 'show');
+			setTimeout(function(){ 
+				show_espera('', 'hide');
+				$("#for_ven").submit();
+			}, 1);
+				
+		// $("#for_ven").submit();
+	}
+
+	function cpe_cdr(ecomid){
+		$.ajax({
+			type: "POST",
+			url: "../fe_comprobante/cpe_cdr.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_id: ecomid
+			}),
+			beforeSend: function() {
+				$('#msj_venta').html("Obteniendo CDR de SUNAT...");
+				$('#msj_venta').show(100);
+				showAlert('Consultando CDR de SUNAT...');
+			},
+			success: function(data){
+				$('#msj_venta').html(data.msj);
+				$('#msj_venta').show();
+				showAlert(data.msj,data.est,10000);
+			},
+			complete: function(){
+				venta_tabla();
+				setInterval(()=>{ $('#msj_venta').hide(100); }, 4000);
+			}
+		});
+	}
+
+	function cpe_val(ecomid){
+		$.ajax({
+			type: "POST",
+			url: "../fe_comprobante/cpe_val.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				ecom_id: ecomid
+			}),
+			beforeSend: function() {
+				$('#msj_venta').html("Consultando validez en SUNAT...");
+				$('#msj_venta').show(100);
+				showAlert('Consultando validez de comprobante en SUNAT...');
+			},
+			success: function(data){
+				$('#msj_venta').html(data.msj);
+				$('#msj_venta').show();
+				showAlert(data.msj,data.est,10000);
+			},
+			complete: function(){
+				venta_tabla();
+				setInterval(()=>{ $('#msj_venta').hide(100); }, 4000);
+			}
+		});
+	}
+
+	function file_cargar_archivos(idf, abrfor='', url='', mod_id=''){
+		$.ajax({
+			type: "POST",
+			url: '../file/file_form.php',
+			async:true,
+			dataType: "html",
+			data: {
+				filurl: url,
+				mod_id: mod_id,
+				modide:	idf,
+				abrfor: abrfor
+			},
+			beforeSend: function() {
+				$('#div_file_form').dialog("open");
+				$('#div_file_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_file_form').html(html);
+			},
+			complete: function(){
+			}
+		});
+	}
+
+	function file_carpeta_form(fil_id){
+		$.ajax({
+			type: "POST",
+			url: '../file/file_carpeta_form.php',
+			async:true,
+			dataType: "html",
+			data: {
+				action: 'editar',
+				fil_id:	fil_id
+			},
+			beforeSend: function() {
+				$('#div_file_carpeta_form').dialog("open");
+				$('#div_file_carpeta_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_file_carpeta_form').html(html);
+			}
+		});
+	}
+
+function liberar_venta(id, tip='usa'){
+	if(confirm("Confirmar liberación de la venta?")){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_reg1.php",
+			async:true,
+			dataType: "json",
+			data: ({
+				action_venta:	"liberar_venta",
+				tip:			tip,
+				ven_id:			id
+			}),
+			beforeSend: function() {
+				$('#msj_venta_form').html("Cargando...");
+				$('#msj_venta_form').show(100);
+			},
+			success: function(data){
+				if(data.est == true){
+					$('#btn_liberar').hide(100);
+					$('#btn_liberar2').hide(100);
+					$('#txt_ven_usa').val('NO PROCESADA');
+				}
+				$('#msj_venta_form').html(data.msj);
+				
+			},
+			complete: function(){
+				setTimeout(()=>{$('#msj_venta_form').hide(100);},5000); 
+			}
+		});
+	}
+}
+
+function validar_estado(idven) {
+	$.post('../venta/validar_estado.php', {
+		ven_id: idven
+	}, function (data) {
+		// showToast(data.msj, data.titulo, $('.toast'));
+		showNToast(data.msj, data.titulo, data.tiempo);
+	}, 'json');
+}
+
+//DETALLE DE ULTIMAS MOVIMIENTOS POR PRODUCTO
+function venta_modal_detpre(idp, nomp, codp, cli_id){
+		if(idp != '' && nomp != '' && codp != '' && cli_id != 1){
+		$.ajax({
+			type: "POST",
+			url: "../venta/venta_modal_detpre.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				prod_id: idp,
+				prod_nom: nomp,
+				prod_cod: codp,
+				cli_id: cli_id
+			}),
+			beforeSend: function() {
+				$('#msj_venta').hide();
+				$('#div_venta_modal_detpre').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_venta_modal_detpre').html(html);
+			}
+		});
+	}
+	else{
+		$('#msj_venta_det').html('Primero debe buscar un cliente que no sea "Clientes varios" y luego buscar un producto').show(100);
+		setTimeout(()=>{$('#msj_venta_det').hide(100);},8000);
+	}
+}
+
+function file_catalogo_img(idf){
+	$.ajax({
+		type: "POST",
+		url: "../producto/productofile_catalogo_img.php",
+		async:true,
+		dataType: "html",
+		data: ({
+			pro_id:	idf
+		}),
+		beforeSend: function() {
+			$('#msj_venta_det').hide();
+			$('#div_file_catalogo').dialog("open");
+			$('#div_file_catalogo').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+		},
+		success: function(html){
+			$('#div_file_catalogo').html(html);
+		}
+	});
+}
+
+function ejecutar_sincronizacion() {
+	$.post('../fe_sincronizacion/verificar_certificado.php', function(res) {
+		if (res.valid) {
+			let sincronizar = new Sincronizar();
+			sincronizar.call(res.fecini, res.fecfin, 0, 'venta', '4');
+		}
+	}, 'json');
+}
+
+function abrirModalAvanzado(){
+	$(".modalAvanzadoOculto").toggleClass("aciveAvanzado");
+}
+
+$(function() {
+	ejecutar_sincronizacion();
+
+	$('#btn_actualizar').click(function() {
+		location.reload();
+	});
+	
+	$('#btn_imprimir_pdf').buttonCs({
+		icons: {before: "fa-print"},
+		text: true
+	});
+		
+	$('.btn_modo').buttonCs({
+		icons: {before: "fa-file-excel"},
+		text: true
+	});
+	
+	$('.btn_agregar_venta').buttonCs({
+		icons: {before: "fa-plus"},
+		text: true
+	});
+
+	$('.btn_new_form').buttonCs({
+		icons: {before: "fa-plus"},
+		text: true
+	});
+		
+	// $('#btn_form_pos').buttonCs({
+	// 	icons: {before: "fa-plus"},
+	// 	text: true
+	// });
+	
+	venta_filtro();
+	
+	setTimeout(() => {
+		$("#icon-man").removeClass("bounce");
+	}, 20000);
+
+	$('#chk_ven_anu').change( function(){
+		venta_tabla();
+	});
+
+	$("#div_venta_alert_mon").dialog({
+		title:'Información Monto Caja',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 350,
+		position: { my: "center", at: "top"},
+		modal: true
+	});
+
+	$( "#div_venta_form" ).dialog({
+		title:'Información de Venta',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 980,
+		zIndex: 1,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$( this ).dialog( "close" );
+			}
+		}],
+		close: function(event, ui) {
+			$('#div_venta_form').html('venta_form');
+		}
+	});
+
+	$( "#div_venta_modal_det" ).dialog({
+		title:'Información de Stock - Almacenes',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 440,
+		zIndex: 1,
+		modal: false,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$( this ).dialog( "close" );
+			}
+		}],
+		close: function(event, ui) {
+			$('#div_venta_modal_det').html('venta_form');
+		}
+	});
+
+	$("#confirmModal").dialog({
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 350,
+		modal: true,
+		position: { my: "top", at: "top"},
+		open: function() {
+			$(this).children().show();
+			$(this).prev().remove();
+			$(this).find('button:eq(0)').focus();
+		}
+	});
+
+	$("#confirmModalAnulacion").dialog({
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 400,
+		modal: true,
+		position: { my: "top", at: "top"},
+		open: function() {
+			$(this).children().show();
+			$(this).prev().remove();
+			$(this).find('button:eq(0)').focus();
+		}
+	});
+
+	//VENTAS RAPIDAS 1
+	$( "#div_venta_form1" ).dialog({
+		title:'Registrar Venta',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 1030,
+		zIndex: 1,
+		modal: true,
+		dialogClass: 'my-custom-dialog',
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				id : 'btn_ven_cancelar',
+				click : function(){
+					$('#for_ven').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Guardar',
+				id : 'btn_ven_guardar',
+				click : function(ev) {
+					if ($('#txt_venpag_cre').autoNumericGet() > 0) {
+						if ($('#txt_venpag_cre_numdia').val() < 1) {
+							$("#msj_venta_reg").show(200);
+							$("#msj_venta_reg").html('La fecha del crédito debe ser mayor a la fecha de la venta.');
+							setInterval(()=>{ $('#msj_venta_reg').hide(100); }, 10000);
+						} else {
+							$('#confirmModal').dialog('open');
+						}
+					} else {
+						$('#confirmModal').dialog('open');
+					}
+				}
+			},
+		],
+		close: function(event, ui) {
+						venta_tabla();
+			$('#div_venta_form1').html('venta_form1');
+		},
+		open: function() {
+			$(this).siblings('.ui-dialog-titlebar').find('button').before('<a class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Nueva venta" style="color: #0070a3 !important; right: 1.75rem !important; margin-top: -7px;" target="_blank" href="../venta/?&open=true"><i class="fa fa-window-restore"></i></a>');
+		}
+	});
+
+	//VENTAS RAPIDAS 2
+	$( "#div_venta_form2" ).dialog({
+		title:'Registrar Venta',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 1030,
+		zIndex: 1,
+		modal: true,
+		dialogClass: 'my-custom-dialog',
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				id : 'btn_ven_cancelar',
+				click : function(){
+					$('#for_ven').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Guardar',
+				id : 'btn_ven_guardar',
+				click : function(){
+					if ($('#txt_venpag_cre').autoNumericGet() > 0) {
+						if ($('#txt_venpag_cre_numdia').val() < 1) {
+							$("#msj_venta_reg").show(200);
+							$("#msj_venta_reg").html('La fecha del crédito debe ser mayor a la fecha de la venta.');
+							setInterval(()=>{ $('#msj_venta_reg').hide(100); }, 10000);
+						} else {
+							$('#confirmModal').dialog('open');
+						}
+					} else {
+						$('#confirmModal').dialog('open');
+					}
+				}
+			},
+		],
+		close: function(event, ui) {
+						venta_tabla();
+			$('#div_venta_form2').html('venta_form2');
+		}
+	});
+
+	$( "#div_venta_impresion" ).dialog({
+		title:'Que desea hacer?',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 370,
+		position: { my: "center", at: "top"},
+		modal: true
+	});
+
+	$( "#div_venta_correo_form" ).dialog({
+		title:'Enviar por Correo',
+		autoOpen: false,
+		resizable: false,
+		//height: 600,
+		width: 980,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				click : function(){
+					$('#for_ven_cor').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Enviar',
+				id : 'btn_ven_correo',
+				click : function(){
+					//if(confirm("Confirmar envío de correo?"))
+					//{
+						$("#for_ven_cor").submit();
+					//}
+				}
+			},
+		],
+		close: function( event, ui ) {
+			setTimeout(function()
+			{ 
+				$.ajax({
+					url: "../venta/cpeimp_delete_pdf.php",
+				});
+			}, 10000);
+			
+		}
+	});
+
+	$( "#div_venta_correo_form_modal" ).dialog({
+		title:'Enviar por Correo',
+		autoOpen: false,
+		resizable: false,
+		//height: 600,
+		width: 500,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				click : function(){
+					$('#for_ven_cor').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Enviar',
+				id : 'btn_ven_correo',
+				click : function(){
+					//if(confirm("Confirmar envío de correo?"))
+					//{
+						$("#for_ven_cor").submit();
+					//}
+				}
+			},
+		],
+		close: function( event, ui ) {
+			setTimeout(function()
+			{ 
+				$.ajax({
+					url: "../venta/cpeimp_delete_pdf.php",
+				});
+			}, 10000);
+			
+		}
+	});
+
+	$( "#div_venta_email" ).dialog({
+		title:'Detalle de Correos',
+		autoOpen: false,
+		resizable: false,
+		height: 600,
+		width: 990,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: true,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$( this ).dialog( "close" );
+			}
+		}]
+	});
+
+	$( "#div_ingreso_form" ).dialog({
+		title:'Información de Ingreso',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 960,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				id: 'btn_ing_cancelar',
+				click: function(){
+					$('#for_ing').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text: 'Guardar',
+				id: 'btn_ing_guardar',
+				click: function(){
+					$("#for_ing").submit();
+				}
+			},
+		]
+	});
+	
+	$( "#div_venta_enviowsp_form" ).dialog({
+		title:'Enviar por WhatsApp',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 480,
+		modal: true,
+		position: { my: "center", at: "top"},
+		// buttons: [
+		// 	{
+		// 		text : 'Enviar WhatsApp Web',
+		// 		id: 'btn_ven_envioweb_guardar',
+		// 		click : function(){
+		// 			$('#for_env').submit();
+		// 			$('#hdd_url').val('web');
+		// 		}
+		// 	},
+		// 	{
+		// 		text : 'Enviar WhatsApp App',
+		// 		id: 'btn_ven_envioapp_guardar',
+		// 		click : function(){
+		// 			$('#for_env').submit();
+		// 			$('#hdd_url').val('app');
+		// 		}
+		// 	},
+		// 	{
+		// 		text : 'Cancelar',
+		// 		id: 'btn_ven_envio_cancelar',
+		// 		click : function(){
+		// 			$( "#div_venta_enviowsp_form" ).empty();
+		// 			$(this).dialog("close");
+		// 		}
+		// 	},
+		// ],
+		close: function()
+		{
+			$("#div_venta_enviowsp_form").html('Cargando...');
+		}
+	});
+
+	$('#btn_imprimir').click(function() {
+		$("#for_fil_ven").attr('action', 'venta_print.php');
+		$("#for_fil_ven").attr("target","_blank");
+		$("#for_fil_ven").submit();
+	});
+
+	$("#btn_manual").click(function(){
+		manual_modal('47','../venta/', '');
+		$("#icon-man").removeClass("bounce");
+	});
+
+	$('#btn_excel').click(function() {
+		$("#for_fil_ven").attr('action', 'venta_reporte_excel.php');
+		$("#for_fil_ven").attr('target', '_blank');
+		$("#for_fil_ven").submit();
+	});
+
+	//FORMULARIO DE PRODUCTO
+	$( "#div_producto_form" ).dialog({
+		title:'Información de Artículo',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 1020,
+		modal: true,
+		position: { my: "center", at: "top"},
+		buttons: [
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				id: 'btn_pro_cancelar',
+				click : function(){
+					$( "#div_producto_form" ).empty();
+					$(this).dialog("close");
+				}
+			},
+			{
+				text : 'Guardar',
+				id: 'btn_pro_guardar',
+				click : function(){
+					$('#for_pro').submit();
+					$(this).dialog("close");
+				}
+			},
+		],
+		close: function()
+		{
+			$("#div_producto_form").html('Cargando...');
+		}
+	});
+
+	//Formulario de confirmación por usuario
+	$( "#div_confirmacion_form" ).dialog({
+		title:'Confirmación de acción',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 'auto',
+		zIndex: 1,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				click : function(){
+					$('#for_con').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Aceptar',
+				id : 'btn_con_guardar',
+				click : function(){
+					$("#for_con").submit();
+				}
+			},
+		],
+		close: function(event, ui) {
+			$('#for_con').each (function(){this.reset();});
+		}
+	});
+	
+			
+	$( "#div_file_form" ).dialog({
+		title:'Información de Subir Archivo',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 600,
+		zIndex: 1,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$( this ).dialog( "close" );
+			}
+		}],
+		close: function(event, ui) {
+			if($('#hdd_file_sub').val() != 0){
+				file_modulo_tabla();
+			}
+			$('#div_file_form').html('file_form');
+		}
+	});
+
+	$( "#div_file_carpeta_form" ).dialog({
+		title:'Actualizar Carpeta',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 300,
+		zIndex: 1,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons:[
+			{
+				text : 'Cerrar',
+				class : 'btnx btnx-light btnx-smMd',
+				click : function(){
+					$('#for_file_car').each (function(){this.reset();});
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text : 'Guardar',
+				id : 'btn_file_guardar',
+				click : function(){
+					$("#for_file_car").submit();
+				}
+			},
+		],
+		close: function(event, ui) {
+			$('#div_file_form').html('file_form');
+		}
+	});
+
+	$( "#div_venta_modal_detpre" ).dialog({
+		title:'Información de Últimos Precios',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 440,
+		zIndex: 1,
+		modal: false,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$(this).dialog( "close" );
+				$("#txt_bus_cat_preven").focus().select();
+			}
+		}],
+		close: function(event, ui) {
+			$('#div_venta_modal_detpre').html('venta_form');
+		}
+	});
+
+	$( "#div_file_catalogo" ).dialog({
+		title:'Catalogo de Imagenes',
+		autoOpen: false,
+		resizable: false,
+		height: 'auto',
+		width: 550,
+		zIndex: 1,
+		modal: true,
+		position: { my: "center", at: "top"},
+		closeOnEscape: false,
+		buttons: [{
+			text : 'Cerrar',
+			class : 'btnx btnx-light btnx-smMd',
+			click : function() {
+				$( this ).dialog( "close" );
+			}
+		}],
+		close: function(event, ui) {
+			$('#div_file_catalogo').html('file_form');
+		}
+	});
+
+});
+
+	function producto_form_i(act, pro_id){
+		$.ajax({
+			type: "POST",
+			url: "../producto/producto_form.php",
+			async:true,
+			dataType: "html",
+			data: ({
+				action: act,
+				pro_id: pro_id,
+				origen: 'venta',
+				pro_nom: $('#txt_bus_pro_nom').val().trim().toUpperCase(),
+				pre_codbar: $('#txt_bus_pro_codbar').val().trim(),
+				preven: $('#txt_bus_cat_preven').val().trim()
+			}),
+			beforeSend: function() {
+				$('#msj_producto').hide();
+				setTimeout(function(){
+					$('#div_producto_form').dialog("open");
+				},200);
+				$('#div_producto_form').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+			},
+			success: function(html){
+				$('#div_producto_form').html(html);
+			}
+		});
+	}
+
+	function calcula_equiva(){
+		if ($('#txt_bus_pro_nom').val() == '') {
+			$('#txt_bus_pro_nom').focus();
+		}else{
+			if($("#hdd_placa").val() != ''){
+				$("#txt_bus_num_pla").val($("#hdd_placa").val());
+			}
+			$.ajax({
+				type: "POST",
+				url: "valor_equivalente.php",
+				async:false,
+				dataType: "html",
+				data: ({
+					precio: $('#txt_bus_cat_preven').val(),
+					num_pla: $('#txt_bus_num_pla').val(),
+					inf_adi:  $('#txt_bus_pro_inf').val()
+				}),
+				beforeSend: function() {
+					$('#msj_producto').hide();
+					setTimeout(function(){
+						$('#div_equivalente').dialog("open");
+						openDialogEquivalente = true;
+					},200);
+
+					$('#div_equivalente').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+				},
+				success: function(html){
+					$('#div_equivalente').html(html);
+				},
+				complete: function () {
+					$('txt_equi').focus();
+				}
+			});
+		}
+	}
+
+	function calcula_equiva_eq(){
+		if ($('#txt_bus_pro_nom').val() == '') {
+			$('#txt_bus_pro_nom').focus();
+		}else{
+			if($("#hdd_placa").val() != ''){
+				$("#txt_bus_num_pla").val($("#hdd_placa").val());
+			}
+			$.ajax({
+				type: "POST",
+				url: "valor_equivalente_eq.php",
+				async:false,
+				dataType: "html",
+				data: ({
+					precio: $('#txt_bus_cat_preven').val(),
+					num_pla: $('#txt_bus_num_pla').val(),
+					inf_adi:  $('#txt_bus_pro_inf').val()
+				}),
+				beforeSend: function() {
+					$('#msj_producto').hide();
+					setTimeout(function(){
+						$('#div_equivalente').dialog("open");
+						openDialogEquivalente = true;
+					},200);
+
+					$('#div_equivalente').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+				},
+				success: function(html){
+					$('#div_equivalente').html(html);
+				},
+				complete: function () {
+					$('txt_equi').focus();
+				}
+			});
+		}
+	}
+</script>
+</head>
+<body>
+
+
+<div class="container backGroundModal">
+	<header>
+					<script>
+			window.volver_autenticar = function(){
+				if(!$('#div_form_autenticar_validate').length){
+					var $div = $('<div id="div_form_autenticar_validate"><div style="width: 480px; min-height: 2px;"></div></div>').appendTo('body');
+					$div.dialog({
+						autoOpen: false,
+						resizable: false,
+						height: 'auto',
+						width: 'auto',
+						position: { my: "center", at: "top"},
+						modal: true,
+						closeOnEscape: false,
+						open : function(){
+							$(this).prev().remove();
+						}
+					});
+				}
+				$.ajax({
+					url: '../login/login_modal_form.php',
+					type: 'post',
+					dataType: 'html',
+					beforeSend: function(){
+						window.showAlert('Por seguridad, por favor inicie sesión nuevamente');
+					},
+					success : function(html){
+						$('#div_form_autenticar_validate').parent().css({'background-color': '#f7f9fc', 'border-radius': '10px'});
+						$('#div_form_autenticar_validate div').html(html);
+						$('#div_form_autenticar_validate .botones_login').removeAttr("class");
+						$('#div_form_autenticar_validate #btn_ingresar')
+							.css({width:'49.2%', margin:'8px 8px 8px 0'})
+							.after('<button type="button" class="btn btn-cancelar" style="width: 49.2%; margin: 8px 8px 8px 0px;" onclick="sessionRefresh()">Cancelar</button>');
+							// .after('<button type="button" style="width:49.2%;background:#e63d3d" onclick="sessionRefresh()">Cancelar</button>');
+						$('#div_form_autenticar_validate').dialog('open');
+					},
+				});
+			};
+
+		</script>
+				<link rel="stylesheet" type="text/css" href="../../css/estilo/alert_cs.css">
+		<script>
+			/*
+			* Muestra mensajes de alerta en la parte inferior derecha
+			* @author Marlon Montalvo Flores
+			* @param mensaje Cadena con el mensaje a mostrar
+			* @param estado (opcional) true para verde, false para rojo y si no se pasa es azul
+			* @param time (opcional) tiempo en ms que se mostrará el mensaje por defecto es 6 segundos
+			*/
+			window.showAlert = function(mensaje, estado, time, position='right-top'){
+				if(typeof mensaje !== 'string' || mensaje === '') return;
+				if(!$('.alert-cs-container.alert-cs-'+position).length) $('body').append('<div class="alert-cs-container alert-cs-'+position+'"/>');
+				var $item = $('<div class="alert-cs-item"/>');
+				var $loader = $('<span class="alert-cs-loader alert-cs-loaded"/>');
+				var $icon = $('<i class="fa"/>');
+				var $btn = $('<button class="alert-cs-item-close"></button>');
+				var $time = time || 8000;
+				$btn.attr('title', 'Click para cerrar');
+
+				if (['success', 'error', 'warning', 'info'].includes(estado)) {
+					$item.addClass('alert-cs-item-' + estado);
+					if (estado === 'success') $icon.addClass('fa-check');
+					if (estado === 'error') $icon.addClass('fa-times');
+					if (estado === 'warning') $icon.addClass('fa-engine-warning');
+					if (estado === 'info') $icon.addClass('fa-info-circle');
+				} else if (estado === true) {
+					$item.addClass('alert-cs-item-success');
+					$icon.addClass('fa-check');
+				} else if (estado === false) {
+					$item.addClass('alert-cs-item-error');
+					$icon.addClass('fa-times');
+				} else {
+					$item.addClass('alert-cs-item-default');
+				}
+
+				$item.append($loader);
+				$item.append('<div class="alert-cs-icon"/>');
+				$item.children('div').html($icon);
+
+				$item.append(mensaje);
+				$item.append($btn);
+				$item.appendTo('.alert-cs-container.alert-cs-'+position);
+				$('.alert-cs-container.alert-cs-'+position).append('<br/>');
+				// $item.find('.alert-cs-loader').css({'transition': 'width 2.6s ease-in', 'background-color': 'rgba(0,0,0,0.2)', 'width': '100%'});
+				$item.find('.alert-cs-loader').css({'background-color': 'rgba(0,0,0,0.2)'});
+				$item.show('400');
+				$item.css('display', 'inline-block');
+
+				var timer = window.setTimeout(function(){
+					$item.toggle('300',function () {
+						$item.next().remove();
+						// $($('.alert-cs-container').children('br')[0]).remove();
+						$item.remove();
+					});
+				}, $time);
+
+				loadProgressBar($item.find('.alert-cs-loader'), ($time / 100), $time);
+
+				$btn.click(function(ev) {
+					window.clearTimeout(timer);
+					$item.toggle('300',function () {
+						$item.next().remove();
+						$item.remove();
+					});
+				});
+			};
+
+			function loadProgressBar($elementProgressBar, timer, finalTime) {
+				var time = 0;
+				var sInterval = setInterval(function() {
+					time += timer;
+					 
+					if (time == finalTime) {
+						clearTimeout(sInterval);
+					}
+
+					var porcentaje = parseInt((time / finalTime) * 100, 10);
+					$elementProgressBar.css('width', porcentaje + '%');
+				}, timer);
+			}
+
+			/*
+			* Muestra mensajes de alerta tipo toast 
+			* @author Eloy
+			* @param msj Cadena con el mensaje a mostrar
+			* @param title (opcional) Cadena con el títuo a mostrar
+			* @param toast (opcional) DOM tipo toast, si null lo crea
+			* @param time (opcional) tiempo en ms que se mostrará el mensaje, por defecto es 15 segundos
+			* @param position (opcional) Cadena con la posición en la que se mostrará el toast
+			*/
+
+			window.showToast = function(msj, title, $toast = null, time = 15000, position = 'bottom-right') { 
+				if ($toast === null) {
+					if ($('.toast-' + position).length == 0) {
+						$('.contenido').append('<div class="toast-' + position + '"/>');
+					}
+
+					var id = $('.toast').length;
+					var $toast = $('<div class="toast fade hide" id="liveToast' + id + '" role="alert" aria-live="assertive" aria-atomic="true"/>');
+					var $toastHeader = $('<div class="toast-header bg-primary text-white"/>');
+					var $toastBody = $('<div class="toast-body"/>');
+					$toastHeader.append('<strong class="me-auto toast-title"/>');
+					$toastHeader.append('<small class="toast-time"/>');
+					$toastHeader.append('<button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close"/>');
+					$toast.append($toastHeader);
+					$toast.append($toastBody);
+					$toast.prependTo($('.toast-' + position));
+
+					$toast.on('hidden.bs.toast', function(ev) {
+						$(ev.currentTarget).remove();
+					});
+				}
+
+				$toast.find('.toast-title').text(title || 'Sistema');
+				$toast.find('.toast-body').html(msj);
+				$toast.toast({ delay: time });
+				$toast.toast('show');
+				timeToClose($toast.find('.toast-time'), time);
+			}
+
+			window.showNToast = function(msj, title, time, position) {
+				window.showToast(msj, title, null, time, position);
+			}
+
+			function timeToClose($elementTimeClose, finalTime) {
+				var timeSecond = 1000;
+
+				var seg = finalTime / timeSecond;
+				$elementTimeClose.text(seg + ' s');
+				finalTime -= timeSecond;
+
+				var sInterval = setInterval(function() {
+					var seg = finalTime / timeSecond;
+					$elementTimeClose.text(seg + ' s');
+					finalTime -= timeSecond;
+					if (seg == 1) clearTimeout(sInterval);
+				}, timeSecond);
+			}
+		</script>
+		
+<!-- Required scripts -->
+<script type="text/javascript" src="../../libreriasphp/qzprint/js/dependencies/rsvp-3.1.0.min.js"></script>
+<script type="text/javascript" src="../../libreriasphp/qzprint/js/dependencies/sha-256.min.js"></script>
+<script type="text/javascript" src="../../libreriasphp/qzprint/js/qz-tray.js"></script>
+<script src="../../libreriasphp/qzprint/js/jsrsasign-all-min.js"></script>
+
+<script>
+    qz.security.setCertificatePromise(function (resolve, reject) {
+        resolve("-----BEGIN CERTIFICATE-----\n" +
+        "MIID8jCCAtqgAwIBAgIJAPT1+/H6wYT8MA0GCSqGSIb3DQEBCwUAMIGNMQswCQYD\n"+
+        "VQQGEwJQRTETMBEGA1UECAwKTGFtYmF5ZXF5ZTERMA8GA1UEBwwIQ2hpY2xheW8x\n"+
+        "EDAOBgNVBAoMB0ludGljYXAxCzAJBgNVBAsMAklDMRYwFAYDVQQDDA0qLmludGlj\n"+
+        "YXAuY29tMR8wHQYJKoZIhvcNAQkBFhBpbmZvQGludGljYXAuY29tMB4XDTE4MDIw\n"+
+        "OTA1MjQyMloXDTQ5MDgwNDA1MjQyMlowgY0xCzAJBgNVBAYTAlBFMRMwEQYDVQQI\n"+
+        "DApMYW1iYXllcXllMREwDwYDVQQHDAhDaGljbGF5bzEQMA4GA1UECgwHSW50aWNh\n"+
+        "cDELMAkGA1UECwwCSUMxFjAUBgNVBAMMDSouaW50aWNhcC5jb20xHzAdBgkqhkiG\n"+
+        "9w0BCQEWEGluZm9AaW50aWNhcC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw\n"+
+        "ggEKAoIBAQDL+STYySATMlfKJI5aJsw05D779kS4LDRiZhVgdffHwmVnLydPSpjz\n"+
+        "/1/YpHYgJ1kyoyrzkbdKUapO1zSx5A5gPqTV0c0vEz1Al8NHU5sXcZJnL4YpSVtY\n"+
+        "en7CxCYiwSFKeS4YlgXnCzb0PWWQP+EMS7Ljsq9q/XUnYNNdtJCDun9LVhiASaG8\n"+
+        "l4ha8w48GTsi6o9rctx51ioQrYG4osY7jewImPL2h2HAxww3ALvoNHkkf2Asi6fz\n"+
+        "N27AXJNi87GKpQYU6K3Y1vhCJ1c/zsRQojOIAUk71Tn4LRY7Y9kvaXYh/5xrBFjv\n"+
+        "HD8uXg+rn1GafitpY+mw+CH7wx6HTKvtAgMBAAGjUzBRMB0GA1UdDgQWBBRlpKMz\n"+
+        "IMehrpYnQ+QCPm6q+o5E/jAfBgNVHSMEGDAWgBRlpKMzIMehrpYnQ+QCPm6q+o5E\n"+
+        "/jAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQC6Mrl2okdIoSCI\n"+
+        "Uibxpm00uaxsDvgKU6sQST7SLp2b6nYf95+ODGQnR9o5Zb8j3BEUnpDORAcRQrAb\n"+
+        "KX+bH76INHqdKgm/ABQl35bM9/04AnxDyaBIRunSCpMorZbsYC2V/4atD4gNJwjv\n"+
+        "+r0AfDhNhaJvzvQk9NyNO8rUHMmejq5+/9vOv0bPfNU5wPcHqDjYV8gt3cnqvWuX\n"+
+        "MWwjeN6iilFY2PnN5GWls73ipySkGXW1gSsJU52waiYMexkMmAGYfouOmJ1HJ7AR\n"+
+        "TM+05w+n0LfzM+H7wd8KidH4iLI+YQUTKy4bBrdZOBUPdarKIPvD8mm5t+sN2LzV\n"+
+        "0YbFyNxZ\n"+
+        "-----END CERTIFICATE-----");
+    });
+
+    var privateKey = "-----BEGIN PRIVATE KEY-----\n" +
+        "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL+STYySATMlfK\n"+
+        "JI5aJsw05D779kS4LDRiZhVgdffHwmVnLydPSpjz/1/YpHYgJ1kyoyrzkbdKUapO\n"+
+        "1zSx5A5gPqTV0c0vEz1Al8NHU5sXcZJnL4YpSVtYen7CxCYiwSFKeS4YlgXnCzb0\n"+
+        "PWWQP+EMS7Ljsq9q/XUnYNNdtJCDun9LVhiASaG8l4ha8w48GTsi6o9rctx51ioQ\n"+
+        "rYG4osY7jewImPL2h2HAxww3ALvoNHkkf2Asi6fzN27AXJNi87GKpQYU6K3Y1vhC\n"+
+        "J1c/zsRQojOIAUk71Tn4LRY7Y9kvaXYh/5xrBFjvHD8uXg+rn1GafitpY+mw+CH7\n"+
+        "wx6HTKvtAgMBAAECggEAGeg3KeHB1S5bwC0Md57d6QnkhhQtfkb/EFBu/qV9Jz4l\n"+
+        "qwluMMAE1VjmT5nz9vmIdsoKto0XfrUIsKLc6otQ2CCcxxuyt/v1l7Ku9uxDkqK2\n"+
+        "OazrmWrb000btJk9TsTA+biShkTn0wS1oif6MmwqpWkn+4vChBBVRP8jWY+Jm3Fm\n"+
+        "iq2yu0+akLLESzNFw3o0gsdgKZMjYGASenziDnMbmwyzK9/jpi2Fcvbj92ZLyU+V\n"+
+        "p0abyBazPPLsQFHVYtsGZi+MQT7oH5RRe0EHTPIPTCFsmKPrxi8fG6KM3o7aEM1b\n"+
+        "1RplTFHAMC18m9gW08BASq4NZt5d8M/8GtVifHmqgQKBgQDtUmccg2qu162aeFgr\n"+
+        "3kszqIcUABoBrd9ZUnwwx8aLqjtV+t3jQfWiYXL0v5mseHAdoAJ2chcPhbvHm2od\n"+
+        "dTM72z8rK6FnHllNi9OUW/1x7W2EI4jYhagIVsyAlmRZbTb4lomV17kkjyv0JfDR\n"+
+        "sC2/UVhplWvAgLkh37Bneb4J6QKBgQDcBtPBB/5iN0tzqwOqbolDPAWm8DpRJ6Eb\n"+
+        "dYI+wTdx2/woy9JzCkbXWI1T67UznawIJYKZzo3Vs4lk3GzvFH1gXad4t/ldKg3v\n"+
+        "H42fxOX7OTwLOSb9YRUK6wORTgh1zgZOuOi6OIkwn/q5tT7IQlSJtRXDJyLyOYlG\n"+
+        "Y5+nIF/LZQKBgQCagVpmAtzyxbHdblog/VFCaYa/q61CyJsvgPcfnwCRLxwARxos\n"+
+        "eWXc+Mqpsw/ubF65utG/oVmIHo35TyJP2VyorH28smQbSXPke5Mc9KLViDkTnTrb\n"+
+        "lHCoNTJgyQi9+8+dGgyrBE4iEiAQjJ7zNVsjQmdoHgKPyn49Im+rfmQN+QKBgE0j\n"+
+        "85/Mrqo+mqx9+7YINQWmiJDDzp5fV4OqCjT4RvkbWGfxNeJxau7bNAmFLS1gjUz5\n"+
+        "4bUNDvsqi/QZt/OGaoKbsziGv92i/emlVWD7hmoy4dNJgVr6a4c9aC3MfvjWd62n\n"+
+        "9Kg9ZBPxMtVjLxTE9KCnJW8bTIxCEdfk27ebiRplAoGAc4DcbxSWfzJLlfvwJI3K\n"+
+        "NdfbH+1DhUOVawwIVhm1uYIKzpkja71jcu3VlFmv/71/T6EqvwvJhtSNMAUMMyHn\n"+
+        "FF0aoLDrtiB6xttV8CZOJt1MI395pk3WfHSI9aNDehA8LS1aoCmKj0T5in/OZAHS\n"+
+        "isYbQ+ms2EeFKlUMf7Sr2jc=\n"+
+        "-----END PRIVATE KEY-----";
+
+    qz.security.setSignaturePromise(function(toSign) {
+        return function(resolve, reject) {
+            try {
+                var pk = KEYUTIL.getKey(privateKey);
+                var sig = new KJUR.crypto.Signature({"alg": "SHA1withRSA"});
+                sig.init(pk); 
+                sig.updateString(toSign);
+                var hex = sig.sign();
+                console.log("DEBUG: \n\n" + stob64(hextorstr(hex)));
+                resolve(stob64(hextorstr(hex)));
+            } catch (err) {
+                console.error(err);
+                reject(err);
+            }
+        };
+    });
+
+    function startConnection(config) {
+        if (!qz.websocket.isActive()) {
+            updateState('Esperando', 'default');
+
+            qz.websocket.connect(config).then(function() {
+                updateState('Activo', 'success');
+            }).catch(handleConnectionError);
+        }
+    }
+
+    /*function findPrinter(query, set) {
+        qz.printers.find(query).then(function(data) {
+            if (set) { setPrinter(data); }
+        }).catch(displayError);
+    }*/
+    
+    /*function printFile(file) {
+        var config = getUpdatedConfig();
+
+        var printData = [
+            { type: 'raw', format: 'file', data: file }
+        ];
+
+        qz.print(config, printData).catch(displayError);
+    }*/
+
+    $(document).ready(function() {
+        window.readingWeight = false;
+        startConnection();
+    });
+
+    qz.websocket.setClosedCallbacks(function(evt) {
+        updateState('Inactivo', 'default');
+        console.log(evt);
+    });
+
+    qz.websocket.setErrorCallbacks(handleConnectionError);
+
+    /// Helpers ///
+    function handleConnectionError(err) {
+        updateState('Error', 'danger');
+
+        if (err.target != undefined) {
+            if (err.target.readyState >= 2) { //if CLOSING or CLOSED
+                displayError("Connection to QZ Tray was closed");
+            } else {
+                displayError("A connection error occurred, check log for details");
+                console.error(err);
+            }
+        } else {
+            displayError(err);
+        }
+    }
+
+    function displayError(err) {
+        console.error(err);
+
+    }
+
+    function updateState(text, css) {
+        $("#qz-status").html(text);
+    }
+
+    /// QZ Config ///
+    var cfg = null;
+    function getUpdatedConfig() {
+        if (cfg == null) {
+            cfg = qz.configs.create(null);
+        }
+        return cfg
+    }
+
+    /*function setPrinter(printer) {
+        var cf = getUpdatedConfig();
+        cf.setPrinter(printer).then(function(){
+
+        });
+    }*/
+    function print_file_qz(datos,url_doc){ 
+		let data = {};
+		$.each(datos, function(i, val) {
+			if(typeof(val) === 'number' || typeof(val) === 'object' || Array.isArray(val) == true || typeof(val) == 'boolean'){
+				data[i] = val;
+			}else{
+			    try{
+			     if(val.indexOf('../') == -1){
+				    data[i] = val;
+			     }
+			    }catch(e){
+			        console.log(typeof(val));
+			    }
+			}
+		});
+		
+        $.ajax({
+            type: "POST",
+            url: url_doc,
+            async:true,
+            dataType: "json",                      
+            data: data,
+            beforeSend: function()
+            {
+                console.log(datos);
+                $('#msj_imp').html("Imprimiendo en "+datos.imp_nom+"...");
+                $('#msj_imp').show(100);
+            },
+            success: function(returnedData){
+				setTimeout(function(){ $('#msj_imp').hide(100); }, 5000);
+                //QZ FUNCIONES
+                qz.printers.find(datos.imp_nom).then(function(data) {
+                    var cf = getUpdatedConfig();
+                    $.when(cf.setPrinter(data)).then(function(){
+                        var file = url_doc.slice(0,url_doc.lastIndexOf('/'))+'/'+returnedData.file;
+                        var printData = [
+                            { type: 'raw', format: 'file', data: file }
+                        ];
+
+                        qz.print(cf, printData).then(function(){
+                            remove_file(returnedData.file,url_doc,'remove');
+                        });
+                    });
+                });
+            }
+        });
+    }
+
+    function remove_file(file,url_doc,action){  
+        $.ajax({
+            type: "POST",
+            url: url_doc,
+            async:true,
+            dataType: "html",                      
+            data: ({ 
+                filename: file,
+                action: action,
+            }),
+            success: function(html){
+                $('#msj_imp').hide(100);
+            }
+        });
+    }
+</script>
+		<script>
+			//MANEJO DE SESSION
+			const intervalMinutes = Number(10)*60*1000; // INTERVALO DE TIEMPO EN MINUTOS PARA REFRESCAR LA SESSION
+			var sessionTimeout = null;
+			// ENCAPSULAMOS EN UN setTimeout A 0 MILISEGUNDOS PARA ELIMINAR EL CONFLICTO CON $.show(100) O $.hide(100)
+			// setTimeout(function () {sessionTimeout = setTimeout(sessionRefresh, intervalMinutes);},0);
+			sessionRefresh();
+			
+			function sessionRefresh() {
+				if(sessionTimeout!==null || sessionTimeout!==undefined){
+					clearTimeout(sessionTimeout); // cancela al setTimeout previo si es q se llama a la funcion sessionRefresh() desde otro evento
+				}
+				$.ajax({
+					url: "../contenido/session.php",
+					type: "POST",
+					async:true,
+					data: {
+						valconfigubi: $('#hddconfigubi').val(),
+						valconfigcod: $('#hddconfigcod').val(),
+					},
+					dataType: "JSON",
+					success: function(data){
+						if(data.finalized===true){
+							if(!($( "#div_form_autenticar_validate" ).dialog( "isOpen" )===true)){
+								volver_autenticar();
+							}
+						}else{
+							$('#div_form_autenticar_validate').dialog('close');
+						}
+					},
+					complete: function () {
+						sessionTimeout = setTimeout(sessionRefresh, intervalMinutes);
+					}
+				});
+			}
+	
+		</script>
+				<audio id="audrep"></audio>
+		<script>
+			const AUDIO_TYPES = Object.freeze({
+				WARNING: "ping-warning.mp3",ADD: "ping-add.mp3",ERROR: "ping-err.mp3",DEL: "ping-del.mp3",REGISTER: "cash-register-purchase.mp3",			});
+			
+			function reproducirSonido(tip=''){
+							}
+		</script>
+		
+		<input type="hidden" name="hddconfigubi" id="hddconfigubi" value="VENTA,CPE,GENERAL,CANJE,LOTE,CLIENTE,CLIENTE-PROVEEDOR,PRODUCTO,INGRESO">
+		<input type="hidden" name="hddconfigcod" id="hddconfigcod" value="precio-intervalo-mostrar,productorelacionado-mostrar,mostrar-campo-monto-maximo">
+		<div class="menu_user print-false">
+			<table class="tabla_menu_user" width="100%">
+				<tbody><tr class="datos_menu_user" style="background-color:#1C3A5F !important;">
+					<td width="100%">
+						<div id="divDatosMenuUser" style="color: #ffffff !important;">
+							<div style="margin-left: 15px;">
+								<span class="sp-info"><i class="fad fa-user-tag"></i> Vendedor - / Vendedor</span><span style="margin-left: 15px;" class="sp-info"><i class="fad fa-map-marker"></i> Punto Venta 1</span><span class="sp-info"><i class="fad fa-check-circle"></i> EE.SS PETROFORT</span>
+							</div>
+							<div>
+		<style>
+			:root {
+				--back-ground-color-header: {$colorHeader};
+			}
+
+			.dropdown-content .card-notification {
+				margin: 0;
+			}
+
+			.dropdown-content .card-notification .card-header,
+			.dropdown-content .card-notification .card-footer {
+				padding-top: .5rem;
+				padding-bottom: .5rem;
+			}
+
+			.dropdown-content .card-notification .card-header,
+			.dropdown-content .card-notification .card-footer {
+				padding-right: .75rem;
+				padding-left: .75rem;
+			}
+
+			.dropdown-content .card-notification .card-body {
+				padding-right: 0;
+				padding-left: 0;
+				padding-bottom: 0;
+				border: 1px solid #d8e2ef;
+			    border-width: 0 0 1px;
+			    padding-top: 0px !important;
+			}
+
+			.card-notification .notification-wrapper .notification-item {
+			    padding-top: .75em;
+			    padding-right: 1em;
+			    padding-left: 1em;
+			}
+
+			.card-notification .notification-wrapper .notification-item .notificacion-redirect {
+			    padding: 0;
+			}
+
+			.card-notification .notification-wrapper .notification-item .notificacion-redirect:hover {
+			    text-decoration: none;
+			}
+
+			.card-notification .notification-wrapper .notification-item:not(:last-child) {
+				border: 1px solid #d8e2ef;
+			    border-width: 0 0 1px;
+			}
+
+			.card-notification .notification-wrapper .notification-item.unread-notification {
+				background-color: #edf2f9;
+			}
+
+			.card-notification .notification-wrapper .notification-item .content-time {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: .5rem;
+			}
+
+			.card-notification .notification-wrapper .notification-item .content-time .time {
+				margin-bottom: 0 !important;
+				font-weight: 500;
+			}
+
+			.card-notification .notification-wrapper .notification-item.unread-notification .time {
+				--ct-text-opacity: 1;
+				color: rgba(var(--ct-primary-rgb), var(--ct-text-opacity)) !important;
+			}
+
+			.card-notification .notification-wrapper .notification-item .message {
+				line-height: 1.25 !important;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				display: -webkit-inline-box;
+				overflow: hidden;
+				font-weight: normal;
+			}
+
+			.card-notification .notification-wrapper.scroll-notification {
+				height: 275px;
+				overflow-y: auto;
+			}
+
+			.card-notification .notification-wrapper.scroll-notification::-webkit-scrollbar {
+				height: 0;
+				width: .4rem;
+				background-color: #fff;
+			}
+
+			.card-notification .notification-wrapper.scroll-notification::-webkit-scrollbar-thumb {
+				background-color: #d2dae6;
+			}
+
+			.card-notification .card-header .card-title {
+				margin-bottom: 0 !important;
+				font-size: 1rem;
+			}
+
+			.card-link {
+				font-size: .8333333333rem;
+				font-weight: 600;
+			}
+
+			.card-link:hover {
+				text-decoration: none !important;
+			}
+
+			.notification-ind {
+				position: absolute;
+			    right: 5px;
+			    background-color: #f5803e;
+			    border-radius: 50%;
+			    width: 13px;
+			    height: 13px;
+			    text-align: center;
+			    align-content: center;
+			    top: 1px;
+			    color: white;
+			    font-size: .785em;
+			    cursor: pointer;
+			}
+
+			#btnDropdownNotificationContent {
+				border: unset;
+			}
+
+			#btnDropdownNotificationContent:focus {
+				border: unset;
+				box-shadow: unset !important;
+			}
+
+
+
+			.notification-btn {
+				background: none;
+				border: none; 
+				cursor: pointer; 
+				color: var(--back-ground-color-header) !important;
+				font-size: 1rem; 
+				padding: 0; 
+				position: relative; 
+				display: inline-flex; 
+				align-items: center; 
+				justify-content: center; 
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+			}
+
+			.notification-btn:hover {
+				background-color: rgba(211, 211, 211, 0.2);
+				transition: background-color 0.1s ease, box-shadow 0.1s ease;
+			}
+
+		</style>
+		<div class="dropdown">
+			<div style="position: relative;">
+				<button title="Notificaciones" id="btnDropdownNotificationContent" class="notification-btn">
+					<i class="fa fa-bell"></i>
+				</button>
+				<span class="notification-ind" style="display: none;" id="notification-ind"></span>
+			</div>
+			<div id="dropdownNotificationContent" class="dropdown-content" style="margin-top: 2.15rem; margin-left: -15.75rem; border-radius: 0.25rem; width: 285px; line-height: 2;">
+				<div class="card card-notification">
+					<div class="card-header">
+						<div class="d-flex justify-content-between align-items-center">
+							<div><h6 class="card-title">Notificaciones</h6></div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="notification-wrapper scroll-notification" id="contentNotification"></div>
+					</div>
+					<div class="card-footer">
+						<a class="card-link" href="../notificacion/">Ver todo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function cargar_notificaciones_principal() {
+				$.get("../notificacion/cargar_principal.php", function(data) {
+					$("#contentNotification").html(data.html);
+					if (data.ind > 0) $("#notification-ind").text(data.ind).show();
+				}, "json");
+			}
+
+			cargar_notificaciones_principal();
+		</script>
+		<style>
+			.support-btn {
+				background: none;
+				border: none; 
+				cursor: pointer; 
+				color: white; 
+				font-size: 1rem; 
+				padding: 0; 
+				position: relative; 
+				display: inline-flex; 
+				align-items: center; 
+				justify-content: center; 
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+			}
+
+			.support-btn:hover {
+				background-color: rgba(211, 211, 211, 0.2);
+				transition: background-color 0.1s ease, box-shadow 0.1s ease;
+			}
+				
+		</style>
+		<div class="dropdown">
+			<button title="Soporte" id="btnDropdownSupportContent" class="support-btn" style="color: #ffffff !important;">
+									<i class="fa fa-headset"></i>
+							   </button>
+			<div id="dropdownSupportContent" class="dropdown-content" style="margin-top: 2.15rem; margin-left: -15.75rem; border-radius: 0.25rem; width: 285px; line-height: 2;">
+				<h3 style="margin: 5px 0;">Soporte Técnico</h3>
+				<table>
+					<tbody><tr>
+						<td colspan="2" align="center">
+							<img src="../../images/imagen_soporte.png" width="150px" height="150px" style="border-radius: 5px;">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<p>.</p><a class="btn btn-whatsapp btn-xs" href="https://web.whatsapp.com/send?phone=51997515457&amp;text=espetronort.okserver44.com/app/modulos/venta/ Consulta: " target="_blank">
+								<i class="fab fa-whatsapp"></i>&nbsp;Soporte Técnico</a>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<div id="divImagen"><img src="../../images/wsp_cs_qr02.png"></div>
+							Escanea este código para<br> iniciar un chat de WhatsApp<br> con Inticap
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+		<div class="dropdown">
+									<div style="width: 1.5rem; height: 1.5rem; cursor: pointer; margin: 1px 15px 1px 3px;" id="btnDropdownUserContent">
+										<img src="../../images/avatar-1.png" style="width: 100%; height: 100%; border-radius: 50%;">
+									</div>
+									<div id="dropdownUserContent" class="dropdown-content" style="margin-top: 2.15rem; margin-left: -15.75rem; border-radius: 0.25rem; width: 285px; line-height: 2;">
+										<div class="bg-white dark__bg-1000 rounded-2 py-1">
+											<div style="padding: .5rem .75rem;">
+												<div class="d-flex gap-3 flex-column flex-sm-row align-items-center" style="flex-direction: row-reverse;">
+								                    <table class="table table-borderless font-13 font-weight-medium mb-0" width="100%">
+								                        <tbody>
+								                        	<tr>
+								                        		<td align="left"><h3 class="mb-0">Vendedor -</h3></td>
+								                        	</tr>
+								                        	<tr>
+								                        		<td align="left"><h5 class="mb-0" style="font-size: .75rem; font-weight: normal;">Vendedor</h5></td>
+								                        	</tr>
+								                        </tbody>
+								                    </table>
+							                      	<img class="img-border" src="../../images/avatar-1.png" alt="" width="70">
+						                    	</div>
+											</div>
+						                  	<div class="dropdown-divider"></div>
+						                  	<a class="dropdown-item" href="../usuariogestion/"><i class="fa fa-user"></i> Mis datos</a>
+						                  	<a class="dropdown-item" href="../cambioclave/"><i class="fa fa-key"></i> Cambio de clave</a>
+						                  	<div class="dropdown-divider"></div>
+						                  	<a class="dropdown-item" href="../soporte/"><i class="fa fa-info-circle"></i> Información</a>
+						                  	<a class="dropdown-item active" href="javascript:verificar_redireccionamiento();"><i class="fa fa-mobile"></i> Versión móvil</a>
+						                  	<div class="dropdown-divider"></div>
+						                  	<a class="dropdown-item" href="../renovacionpago/"><i class="fa fa-hand-holding-usd"></i> Renovaciones y pagos</a>
+						                  	<div class="dropdown-divider"></div>
+						                  	<a class="dropdown-item" href="../login/cerrar_sesion.php"><i class="fa fa-sign-out-alt"></i> Cerrar sesión</a>
+						                </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="height: 18px; ">
+						<div id="divmenu"> 
+							
+			<ul id="menu1"><li class="itemPadre"><a href="../principal/vendedor.php"><i class="fas fa-chart-line"></i> Dashboard</a></li><li class="itemPadre"><a href="#"><i class="fas fa-boxes"></i> Artículos</a><ul class="submenu"><li class="menuNivelMedio"><a href="../producto/"><i class="fas fa-boxes"></i> Productos / Servicios</a></li></ul></li><li class="itemPadre active"><a href="#"><i class="fas fa-bags-shopping"></i> Ventas</a><ul class="submenu"><li class="menuNivelMedio active"><a href="../venta/"><i class="fas fa-bags-shopping"></i> Registrar Ventas</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../cuentasxcobrar/"><i class="fas fa-usd-square"></i> Cuentas por Cobrar</a></li><li class="menuNivelMedio"><a href="../cuentasxcobrarxcliente/"><i class="fas fa-usd-square"></i> Cuentas por Cobrar por Cliente</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../cliente/"><i class="fas fa-user-friends"></i> Clientes</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../cotizacion/"><i class="fas fa-file"></i> Cotización</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../notacredito/"><i class="fas fa-file-invoice"></i> Notas de Crédito</a></li><li class="menuNivelMedio"><a href="../notadebito/"><i class="fas fa-file-invoice"></i> Notas de Débito</a></li></ul></li><li class="itemPadre"><a href="#"><i class="fas fa-warehouse"></i> Almacén</a><ul class="submenu"><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../traspaso/"><i class="fas fa-exchange-alt"></i> Traspaso entre Almacenes</a></li></ul></li><li class="itemPadre"><a href="#"><i class="fas fa-cash-register"></i> Caja</a><ul class="submenu"><li class="menuNivelMedio"><a href="../flujocaja/caja_vista.php"><i class="fal fa-cash-register"></i> Consulta de Movimientos</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../ingreso/"><i class="fas fa-usd-circle"></i> Ingresos</a></li><li class="menuNivelMedio"><a href="../egreso/"><i class="fab fa-creative-commons-nc"></i> Egresos (Gastos)</a></li><li class="menuNivelMedio"><a href="../transferencia/"><i class="fad fa-exchange-alt"></i> Transferencias entre Cajas</a></li><li class="separator" style="padding:0px; height: 1px ; background-color: rgb(191 197 207) ; width: 100% ; margin-top: 3px; margin-bottom: 3px; "><span></span></li><li class="menuNivelMedio"><a href="../cortecaja/"><i class="fal fa-cash-register"></i> Corte de Caja</a></li></ul></li></ul>
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+
+					const menuPrincipal = document.querySelectorAll(".itemPadre");
+					const submenuItems = document.querySelectorAll(".menuNivelInferior");
+					const menuNivelMedio = document.querySelectorAll(".menuNivelMedio");
+
+					document.querySelectorAll(".itemPadre.active, .menuNivelMedio.active, .menuNivelInferior.active")
+						.forEach(active => active.classList.remove("active"));
+
+					const currentUrl = window.location.pathname;
+
+					const menuPrincipalArray = Array.from(menuPrincipal);
+					const submenuArray = Array.from(submenuItems);
+					const menuNivelMedioArray = Array.from(menuNivelMedio);
+					let itemMenuPrincipal ="";
+					let itemSubMenuGuardado="";
+					let itemMenuNivelMedioGuardado="";
+
+					menuPrincipalArray.forEach(item => {
+						const tempElement = document.createElement("div");
+						tempElement.innerHTML = item.innerHTML;
+						const enlace = tempElement.querySelector("a").getAttribute("href").split("..")[1];
+						if(enlace === currentUrl.split("modulos")[1]){
+							itemMenuPrincipal = item.innerHTML;	
+										
+						}
+					});
+
+					submenuArray.forEach(item => {
+						const tempElement = document.createElement("div");
+						tempElement.innerHTML = item.innerHTML;
+						const enlace = tempElement.querySelector("a").getAttribute("href").split("..")[1];
+						if(enlace === currentUrl.split("modulos")[1]){
+							itemSubMenuGuardado = item.innerHTML;			
+						}
+					});
+
+					menuNivelMedioArray.forEach(item => {
+						const tempElement = document.createElement("div");
+						tempElement.innerHTML = item.innerHTML;
+						const enlace = tempElement.querySelector("a").getAttribute("href").split("..")[1];
+						if(enlace === currentUrl.split("modulos")[1]){
+							itemMenuNivelMedioGuardado = item.innerHTML;	
+						}
+					});		
+
+					const rutaMenuPrincipalEncontrada  = menuPrincipalArray.find(item => item.innerHTML === itemMenuPrincipal);
+					if(rutaMenuPrincipalEncontrada){
+						rutaMenuPrincipalEncontrada.classList.add("active");	
+					}
+
+					const rutaSubMenuEncontrada  = submenuArray.find(item => item.innerHTML === itemSubMenuGuardado);
+					if(rutaSubMenuEncontrada){
+						rutaSubMenuEncontrada.closest(".itemPadre")?.classList.add("active");
+						rutaSubMenuEncontrada.closest(".menuNivelMedio")?.classList.add("active");
+						rutaSubMenuEncontrada.classList.add("active");	
+					}
+
+					const rutaMenuNivelMedioEncontrada  = menuNivelMedioArray.find(item => item.innerHTML === itemMenuNivelMedioGuardado);
+					if(rutaMenuNivelMedioEncontrada){
+					 	rutaMenuNivelMedioEncontrada.closest(".itemPadre")?.classList.add("active");
+						 rutaMenuNivelMedioEncontrada.classList.add("active");
+					}
+					
+				});
+			</script>	
+		
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>	</header>
+	
+	<div class="division">
+		<div class="encabezadoPagina">
+			<div class="encabezadoPagina-cabecera">
+				<div class="encabezadoPagina-titulo">
+					<h2>Registrar ventas</h2>
+					<div>
+						<div id="msj_imp" class="alert alert-warning" style="width: auto; float: right; padding: 2px; display: none;">Imprimiendo en BASIC 230...</div>
+						<div id="msj_venta" class="alert alert-warning" style="width:auto; float:right; padding:2px; display:none"></div>
+						<div id="msj_venta_tabla" class="alert alert-warning" style="width: auto; float: right; padding: 2px; display: none;">Cargando datos ...</div>
+						<div id="msj_venta_sunat" class="alert alert-warning" style="width: auto; float: right; padding: 2px;">B001-00002180 REGISTRADO.</div>
+						<div id="msj_venta_sunat2" class="alert alert-warning" style="width:auto; float:right; padding:2px; display:none"></div>
+					</div>
+				</div>
+				<div class="colorEmpresa"></div>
+			</div>
+			<div class="encabezadoPagina-container">
+				<div class="btnFuncionales">
+											<button type="button" onclick="venta_form1('insertar')" class="btnx-register">
+							<i class="fa fa-plus"></i>
+							<span>Registrar</span>
+						</button>
+															<button type="button" id="btn_excel" class="btnx-excel">
+							<i class="fa fa-file-excel"></i>
+							<span>Excel</span>
+					</button>
+					<button type="button" id="btn_imprimir" class="btnx-imprimir">
+							<i class="fa fa-print"></i>
+							<span>Imprimir</span>
+					</button>
+				</div>
+				<div class="btnRecarga">
+					<button type="button" id="btn_actualizar" class="btnx-update">
+						<span><i class="fa fa-sync"></i></span>
+						<span>Actualizar</span> 
+					</button>
+					<button type="button" id="btn_manual" class="btnx btnx-warning-outline btnx-icon">
+						Ayuda						<i id="icon-man" class="fas fa-question"></i>
+					</button>
+					<!-- <div >
+						<button type="button" class='btn btn-falcon-warning btn-xs' id='btn_manual'>
+							Ayuda							 <i id="icon-man" class=" fas fa-question bounce"></i>
+						</button>
+					</div> -->
+				</div>
+			</div>	
+		</div>
+		<section>				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+			
+			<div class="contenedorFiltroTabla">
+				<div id="div_venta_filtro" class="contenido_tabla"><script type="text/javascript">
+// $('#btn_filtrar').buttonCs({
+// 	icons: {before: "fa-search"},
+// 	text: true
+// });
+// $('#btn_resfil').buttonCs({
+// 	icons: {before: "fa-sync-alt"},
+// 	text: true
+// });
+
+	var dates = $("#txt_fil_ven_fec1, #txt_fil_ven_fec2").datepicker({
+		// maxDate:"+0D",
+		maxDate: new Date(),
+		changeMonth: true,
+		numberOfMonths: 1,
+		changeYear: true,
+		dateFormat: 'dd-mm-yy',
+		onSelect: function( selectedDate ) {
+			var option = this.id == "txt_fil_ven_fec1" ? "minDate" : "maxDate",
+			instance = $( this ).data( "datepicker" ),
+			date = $.datepicker.parseDate(
+				instance.settings.dateFormat ||
+				$.datepicker._defaults.dateFormat,
+				selectedDate, instance.settings );
+			dates.not( this ).datepicker( "option", option, date );
+			//venta_tabla();
+		}
+	});
+
+
+function cmb_fil_doc_id(){
+	$.ajax({
+		type: "POST",
+		url: "../documento/cmb_doc_id.php",
+		async:true,
+		dataType: "html",
+		data: ({
+			mod_id:	'3',
+			nosel_def : true
+		}),
+		beforeSend: function() {
+			$('#cmb_fil_doc_id').html('<option value="">Cargando...</option>');
+		},
+		success: function(html){
+			$('#cmb_fil_doc_id').html(html);
+		}
+	});
+}
+
+function cmb_fil_ven_id(){
+	$.ajax({
+		type: "POST",
+		url: "../vendedor/cmb_ven_id.php",
+		async:true,
+		dataType: "html",
+		data: {
+			ven_id: ''
+		},
+		beforeSend: function() {
+			$('#cmb_fil_ven_id').html('<option value="">Cargando...</option>');
+		},
+		success: function(html){
+			$('#cmb_fil_ven_id').html(html);
+			cmb_fil_usu_id();
+		}
+	});
+}
+
+function cmb_fil_punven_id(idf)
+{
+	$.ajax({
+		type: "POST",
+		url: "../puntoventa/cmb_punven_id.php",
+		async:false,
+		dataType: "html",
+		data: ({
+			punven_id: idf
+		}),
+		beforeSend: function() {
+			$('#cmb_fil_punven_id').html('<option value="">Cargando...</option>');
+		},
+		success: function(html){
+			$('#cmb_fil_punven_id').html(html);
+		},
+		complete: function(){
+			cmb_fil_ven_id();
+		}
+	});
+}
+
+function cmb_fil_ser() {
+	$.ajax({
+		type: "POST",
+		url: "../fe_comprobante/cmb_serie.php",
+		async:true,
+		dataType: "html",
+		data: {},
+		beforeSend: function() {
+			$('#cmb_fil_ser').html('<option value="">Cargando...</option>');
+		},
+		success: function(html){
+			$('#cmb_fil_ser').html(html);
+		}
+	});
+}
+
+function cmb_fil_usu_id()
+{
+	if ($('#cmb_fil_usu_id').length == 1) {
+		$.ajax({
+			type:"POST",
+			url: "../usuario/cmb_usu_id2.php",
+			async:true,
+			dataType:"html",
+			beforeSend:function(){
+				$('#cmb_fil_usu_id').html('<option value="">Cargando...</option>');
+			},
+			success:function(html){
+				$('#cmb_fil_usu_id').html(html);
+				venta_tabla();
+			}
+		});
+	} else {
+		venta_tabla();
+	}
+}
+
+$(function() {
+
+	cmb_fil_doc_id();
+	cmb_fil_ser();
+	cmb_fil_punven_id(1);
+
+	$( "#txt_fil_cli" ).autocomplete({
+		minLength: 3,
+		source: "../cliente/cliente_complete_nom.php",
+		select: function(event, ui){
+			$("#hdd_fil_cli_id").val(ui.item.id);
+			venta_tabla();
+		}
+	}).autocomplete('instance')._renderItem = function(ul, item) {
+		return $("<li></li>").append(item.label).appendTo(ul);
+	};
+
+	$( "#txt_fil_pla" ).autocomplete({
+		minLength: 3,
+		delay: 12,
+		source: "../venta/catalogo_buscar_pla.php",
+		select: function( event, ui )
+		{
+			$("#txt_fil_pla").val(ui.item.label);
+			venta_tabla();
+		}
+	});
+	
+	$("#txt_fil_cli").change(function(){
+		var cli=$("#txt_fil_cli").val();
+		if(cli=="")$("#hdd_fil_cli_id").val('');
+	});
+
+	$('#cmb_fil_doc_id, #cmb_fil_ser, #txt_fil_cor, #cmb_fil_ven_id, #cmb_fil_ven_est, #chk_ven_anu, #cmb_fil_punven_id,#cmb_fil_usu_id').change(function(e) {
+		venta_tabla();
+	});
+});
+</script>
+<form name="for_fil_ven" id="for_fil_ven" target="_blank" action="venta_reporte.php" method="post">
+	<input name="hdd_modo" id="hdd_modo" type="hidden" value="venta_tabla.php">
+	<input type="hidden" id="rec_id" name="rec_id">
+	
+	<div class="filtro">
+		<div>
+			<label for="txt_fil_ven_fec1">Fecha</label>
+			<input name="txt_fil_ven_fec1" type="text" id="txt_fil_ven_fec1" value="05-10-2025" size="6" readonly="" class="hasDatepicker">
+		</div>
+				<div>
+			<label for="txt_fil_ven_fec2">-</label>
+			<input name="txt_fil_ven_fec2" type="text" id="txt_fil_ven_fec2" value="05-10-2025" size="6" readonly="" class="hasDatepicker">
+		</div>
+		
+				<div>
+			<input type="hidden" id="hdd_fil_cli_id" name="hdd_fil_cli_id">
+			<label for="txt_fil_cli">Cliente</label>
+			<input type="text" id="txt_fil_cli" name="txt_fil_cli" size="40" class="ui-autocomplete-input" autocomplete="off">
+		</div>
+		<div>
+			<label for="cmb_fil_ven_id">Vendedor</label>
+			<select name="cmb_fil_ven_id" id="cmb_fil_ven_id"><option value="">-</option>		<option value="1">VENDEDOR</option>
+	</select>
+		</div>
+		<div>
+			<label for="cmb_fil_punven_id">Punto Venta</label>
+			<select name="cmb_fil_punven_id" id="cmb_fil_punven_id">		<option value="1" selected="">
+			PUNTO VENTA 1		</option>
+</select>
+		</div>
+					<div>
+				<label for="cmb_fil_usu_id">Usuario</label>
+				<select name="cmb_fil_usu_id" id="cmb_fil_usu_id">	<option value="">-</option>
+	<option value="11">admin1 - ADMINISTRADOR</option>
+	<option value="2">soporte - SOPORTE</option>
+	<option value="13">contab1 - CONTADOR</option>
+	<option value="12">ventas1 - VENDEDOR</option>
+</select>
+			</div>
+				<div>
+			<label for="cmb_fil_ven_est">Estado</label>
+			<select name="cmb_fil_ven_est" id="cmb_fil_ven_est">
+				<option value="">-</option>
+				<option value="1">REGISTRADA</option>
+				<option value="2">ANULADA</option>
+			</select>
+		</div>
+
+		<div class="modalAvanzadoOculto" style="font-size:17px; font-weight:bold"> | </div>
+		
+		<div class="modalAvanzadoOculto">
+			<label for="cmb_fil_doc_id">Doc</label>
+			<select name="cmb_fil_doc_id" id="cmb_fil_doc_id"><option value="0">-</option>
+<!-- <option value="0">SIN DOCUMENTO</option> -->
+<option value="3">
+    BOLETA DE VENTA ELECTRONICA</option>
+<option value="1">
+    CONTROL INTERNO</option>
+<option value="2">
+    FACTURA ELECTRONICA</option>
+</select>
+		</div>
+		<div class="modalAvanzadoOculto">
+			<label for="cmb_fil_ser">Serie</label>
+			<select id="cmb_fil_ser" name="cmb_fil_ser">	<option value="">-</option>
+	<option value="B001">
+		B001	</option>
+	<option value="F001">
+		F001	</option>
+</select>
+		</div>
+		<div class="modalAvanzadoOculto">
+			<label for="txt_fil_cor">Correlativo</label>
+			<input type="text" id="txt_fil_cor" name="txt_fil_cor" size="8">
+		</div>
+				
+		
+		
+				
+				<!--<label for="chk_ven_anu">Anular Venta<input name="chk_ven_anu" id="chk_ven_anu" type="checkbox" value="1"></label>-->
+		<div class="filtrar-Limpiar">
+			<button type="button" onclick="venta_tabla()" id="btn_filtrar" class="btnx btnx-default02 btnx-buscar btnx-icon">
+				<span><i class="fa fa-search"></i></span>
+				<span>Buscar</span>
+			</button>
+			<button type="button" onclick="venta_filtro()" id="btn_resfil" class="btnx btnx-default02 btnx-icon" title="Limpiar">
+				<span><i class="fa fa-sync-alt"></i></span>
+				<span>Limpiar</span>
+			</button>
+			<div class="notification-button">
+				<button type="button" onclick="abrirModalAvanzado()" class="btnx btnx-default02 btnx-icon notificacionFiltros" title="Filtros avanzados">
+					<span><i class="fa fa-filter"></i></span>
+					<span>Filtros</span>
+				</button>
+				<span id="alerta-filtrosActivos">  </span>
+			</div>
+		</div>
+	</div>
+</form></div>
+				<div id="div_venta_tabla" class="contenido_tabla"><script type="text/javascript">
+$(function() {
+	// $('[data-toggle="popover"]').popover({
+	// 	content: 'Se registró venta correctamente'
+	// });
+
+	// $('.btn_imp2').buttonCs({
+	// 	icons: {before: "fa-print"},
+	// 	text: false
+	// });
+	// $('.btn_imp3').buttonCs({
+	// 	//icons: {before: "fa-print"},
+	// 	text: true
+	// });
+	// $('.btn_email_modal').buttonCs({
+		// icons: {before: "fa-arrow-alt-right"},
+		// text: false
+	// });
+	// $('.btn_sunat').buttonCs({
+	// 	icons: {before: "fa-check"},
+	// 	text: true
+	// });
+
+	$('.btn_editar').buttonCs({
+		icons: {before: "fa-search"},
+		text: false
+	});
+	$('.btn_eliminar').buttonCs({
+		icons: {before: "fa-trash"},
+		text: false
+	});
+	// $('.btn_anular').buttonCs({
+	// 	icons: {before: "fa-ban"},
+	// 	text: false
+	// });
+	// $('.btn').buttonCs({
+		// //icons: {before: "fa-ban"},
+		// text: false
+	// });
+	// $('.btn_pdf').buttonCs({
+	// 	// icons: {before: "fa-file-excel"},
+	// 	text: true
+	// });
+
+	$("#tabla_venta").tablesorter({
+		widgets: ['zebra', 'zebraHover'],
+		headers: {
+			0: {sorter: 'customDateTime'},
+			9: {sorter: false},
+			10: {sorter: false}
+			//10: { sorter: false}
+		},
+		//sortForce: [[0,0]],
+				sortList: [[0,0]]
+		//ordenar por config, que sea descendente (ultima primero)
+		
+			});
+
+});
+</script>
+<table cellspacing="1" id="tabla_venta" class="tablesorter tablesorter-blue tablesorter76185632904c98" role="grid">
+	<thead>
+		<tr role="row" class="tablesorter-headerRow">
+			<!--th align="center">TIPO DE DOCUMENTO</th-->
+			<th align="center" style="padding: 5px 4px !important; user-select: none;" data-column="0" class="tablesorter-header tablesorter-headerAsc" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="ascending" aria-label="FECHA: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton"><div class="tablesorter-header-inner">FECHA</div></th>
+			<th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="DOCUMENTO: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">DOCUMENTO</div></th>
+			<th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="CLIENTE: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">CLIENTE</div></th>
+			<th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="DOC. CLIENTE: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">DOC. CLIENTE</div></th>
+			<!-- <th align="center">MONEDA</th> -->
+			<th align="right" data-column="4" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="TOTAL: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">TOTAL</div></th>
+			<th data-column="5" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="P. VENTA: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">P. VENTA</div></th>
+						<th data-column="6" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="VENDEDOR: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">VENDEDOR</div></th>
+						<th data-column="7" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="ESTADO DOC.: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">ESTADO DOC.</div></th>
+			<!--<th align="center">FORMA DE PAGO</th>-->
+			<th data-column="8" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="tabla_venta" unselectable="on" aria-sort="none" aria-label="ESTADO SUNAT: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">ESTADO SUNAT</div></th>
+			<!--<th align="center">CORREO</th>-->
+			<th align="center" data-column="9" class="tablesorter-header sorter-false tablesorter-headerUnSorted" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" aria-label="VER: No sort applied, sorting is disabled" style="user-select: none;"><div class="tablesorter-header-inner">VER</div></th>
+			<!--<th align="center">XML / CDR</th>-->
+			<th align="center" data-column="10" class="tablesorter-header sorter-false tablesorter-headerUnSorted" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" aria-label="GENERAR / ANULAR: No sort applied, sorting is disabled" style="user-select: none;"><div class="tablesorter-header-inner">GENERAR / ANULAR</div></th>
+		</tr>
+	</thead>
+		<tbody aria-live="polite" aria-relevant="all">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		<tr role="row" class="odd">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:42 am</td>
+			<td nowrap="nowrap">B001-00002172</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3396);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3396')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3396')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3396">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3396','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=76199036c58bd49e00cd90430ed08ed1" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3396','B001-00002172')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="even">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:42 am</td>
+			<td nowrap="nowrap">B001-00002173</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3397);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3397')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3397')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3397">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3397','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=2ba1bdac478e72ec24dad8824f14b76d" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3397','B001-00002173')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="odd">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002174</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3398);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3398')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3398')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3398">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3398','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=22ea1b50f641ff2280884d6ad1c1dbaa" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3398','B001-00002174')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="even">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002175</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3399);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3399')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3399')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3399">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3399','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=8d42bc34324ea2297045c4f8be6c212a" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3399','B001-00002175')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="odd">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002176</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3400);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3400')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3400')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3400">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3400','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=485e4c80b7b39fda7afd410ee042d05d" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3400','B001-00002176')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="even">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002177</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3401);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3401')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3401')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3401">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3401','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=d0f8ea449e78d447669593eb3adcfebc" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3401','B001-00002177')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="odd">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002178</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3402);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3402')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3402')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3402">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3402','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=f8c2d43303197622df6d41925fb4ccfe" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3402','B001-00002178')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="even">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002179</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3403);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3403')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3403')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3403">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3403','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=c922ce6bedaa1fe9b53a8f7f6a885078" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3403','B001-00002179')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr><tr role="row" class="odd">
+			<!--td nowrap="nowrap">BOLETA DE VENTA ELECTRONICA</td-->
+			<td nowrap="nowrap" align="center"> 05-10-2025 06:43 am</td>
+			<td nowrap="nowrap">B001-00002180</td>
+			<td>CLIENTES VARIOS</td>
+			<td>0</td>
+			<!-- <td align="left">SOLES</td> -->
+			<td align="right">
+				S/ 500.00			</td>
+			<td>PUNTO VENTA 1</td>
+						<td>VENDEDOR</td>
+						<td nowrap="nowrap">
+				<span class="legend-indicator bg-primary"></span>REGISTRADA			</td>
+			<!--VALORES DE LA COLUMNA FORMA DE PAGO
+				<td nowrap="nowrap">
+							</td>-->
+			<td>
+				<span onclick="validar_estado(3404);" class="ind-toast badge badge-info-falcon">PROCESANDO...</span>
+			</td>
+			<!--<td align="left" nowrap="nowrap">
+				<a class="btn_email" id="btn_email" href="#correo" title="Enviar correo" onClick="venta_correo_form('enviar','3404')">Enviar Correo</a>
+																			</td>-->
+			<td align="left" nowrap="nowrap">
+				<div class="centradoFlex">
+											<a style="margin-right: 5px;" title="Ver" class="btnx btnx-default-secondary btnx-icon" href="#update" onclick="venta_form('editar','3404')">
+							<span><i class="fa fa-search"></i></span>
+						</a>
+										
+					<form target="_blank" action="../venta/cpeimp_boleta.php" method="post" style="display: inline">
+						<input name="ven_id" type="hidden" value="3404">
+						<button type="submit" class="btnx btnx-default-danger btnx-icon" title="Descargar pdf">
+							<span><i style="font-family: &quot;Roboto&quot;, sans-serif !important;">PDF</i></span>
+						</button>
+					</form>
+
+					
+										<a style="margin-right: 5px;" title="Imprimir" class="btnx btnx-default-secondary btnx-icon" href="#imprimir" onclick="venta_imppos_datos('3404','S','1');">
+						<span><i class="fa fa-print"></i></span>
+					</a>
+														</div>
+			</td>
+			<!--<td nowrap="nowrap">
+									<a class="btn_xml" id="btn_xml" target="_blank" href="../venta/descargar_xml.php?cpe_cod=b29964537b2d65421d1f091b8fe94166" title="Descargar XML">XML</a>
+
+												</td>-->
+			<td nowrap="nowrap">
+			<div class="centradoFlex">
+									
+													<button type="button" class="btnx btnx-default-danger btnx-icon" title="ANULAR" onclick="venta_anular('3404','B001-00002180')">
+									<span><i class="fa fa-ban"></i></span>
+								</button>
+						
+								</div>
+			</td>
+		</tr></tbody>
+			<tbody aria-live="polite" aria-relevant="all">
+		
+<tr class="odd" role="row">
+			<!-- <td align="left">9 registros</td> -->
+			<td align="left" colspan="4"> TOTAL </td>
+			<td align="right">S/ 4,500.00</td>
+			<td colspan="6"></td>
+		</tr><tr class="even" role="row">
+		<td colspan="15" style="padding:8px 7px !important;"> 9 registros</td>
+	</tr></tbody></table></div>
+			</div>
+
+			
+
+			
+		</section>
+	</div>
+	<footer>
+					
+		
+		<style type="text/css">
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 9999;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgb(0,0,0,0.5);
+			}
+		</style>
+		<div id="div_modal_espera">
+			<style type="text/css">
+				#loadingModal .modal-content {
+					margin: 15% auto;
+					padding: 20px;
+					width: 80%;
+					text-align: center;
+				}
+
+				#loadingModal .spinner {
+					border: 4px solid rgba(0, 0, 0, 0.1);
+					border-left-color: #ffff;
+					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+					animation: spin 0.35s linear infinite;
+					margin: 0 auto 20px;
+				}
+
+				@keyframes spin {
+					to {
+					    transform: rotate(360deg);
+					}
+				}
+
+				#btnIrArriba{
+					position: fixed;
+    				bottom:50px;
+					right: 30px;
+					display: none;
+					width: 35px;
+					height:35px;
+					/* background-color:#f06548; */
+					background-color:#299cdb;;
+					cursor: pointer;
+					border: none;
+					border-radius:3px;
+					align-items: center;
+   					justify-content: center;
+					color:white;
+					z-index: 9999;
+					/* transition: transform 0.3s ease, opacity 0.3s ease; */
+				}
+
+				#btnIrArriba:hover {
+					/* transform: translateY(-20px); */
+					opacity: 0.4;
+					/* transition: transform 0.3s ease, opacity 0.3s ease; */
+				}
+
+				#btnIrArriba:active {
+					opacity: 1;
+				}
+
+				/* @keyframes reappear {
+					0% {
+						transform: translateY(-50px);
+						opacity: 0;
+					}
+					100% {
+						transform: translateY(0);
+						opacity: 1;
+					}
+				} */
+
+				/* #btnCerrar {
+					position: absolute;
+					top: -5px; 
+					right: -5px; 
+					background: white; 
+					border: none;
+					border-radius: 50%; 
+					width: 14px;
+					height: 14px;
+					font-size: 12px;
+					color: red; 
+					cursor: default;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				} */
+				/* #btnIrArriba:hover {
+					background-color: rgba(0, 0, 0, 0.8); 
+				} */
+				/* button:focus, #btnIrArriba:focus {
+					outline: none; 
+					user-select: none;
+				} */
+			</style>
+			<div id="loadingModal" class="modal" style="display: none;">
+			  <div class="modal-content">
+			    <div class="spinner"></div>
+			    <p id="contenido_alerta" style="font-size: 15px; color: #ffff;">Guardado</p>
+			  </div>
+			</div>
+		</div>
+		<!--<div id="btnIrArriba">
+			<i style="pointer-events: none;" class="fa fa-arrow-up"></i>
+		</div>-->
+		<script>
+			$(document).ready(function() {
+				$("#btnIrArriba").click(function() {
+					$("html, body").animate({ scrollTop: 0 }, "slow");
+				});
+				$("#btnCerrar").click(function(e) {
+					e.stopPropagation();
+					$("#btnIrArriba").css("display", "none");
+				});
+
+				$(window).scroll(function() {
+					const scrollTop = $(document).scrollTop();
+
+					if (scrollTop > 0) {
+						$("#btnIrArriba").css("display", "inline-flex");
+					} else {
+						$("#btnIrArriba").css("display", "none");
+					}
+				});
+			});
+
+			$(document).on('select2:open', (e) => {
+			    const selectId = e.target.id;
+			    $(".select2-search__field[aria-controls='select2-"+selectId+"-results']").each(function (key,value,){
+			        value.focus();
+			    });
+			});
+			
+			$(function() {
+				$('#div_producto_modal_consulta').dialog({
+					title:'Búsqueda avanzada de productos',
+					autoOpen: false,
+					resizable: false,
+					height: 500,
+					width: '95%',
+					zIndex: 100,
+					modal: true,
+					position: { my: "center", at: "top"},
+					closeOnEscape: true,
+					close: function(event, ui) {
+						$('#div_producto_modal_consulta').html('');
+					}
+				});
+
+				$( "#div_menu_manual" ).dialog({
+					title:'Ayuda del sistema',
+					autoOpen: false,
+					resizable: false,
+					height: 'auto',
+					width: 550,
+					zIndex: 1,
+					modal: true,
+					position: { my: "center", at: "top"},
+					closeOnEscape: false,
+					buttons:[
+						{
+							text : 'Cerrar',
+							click : function(){
+								$( this ).dialog( "close" );
+							}
+						},
+					]
+				});
+			});
+
+			function producto_seleccionar(cat_id, nom, codbar, precos, preven){
+				
+				var modulo = window.location.pathname.split('/').reverse()[1];
+
+				switch(modulo){
+					case "ajusteinventario":
+						if (is_modal_open('div_ajusteinventario_form')) {
+															ajusteinventario_car_fila('insertar', cat_id, 1);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "compra":
+						if (is_modal_open('div_compra_form')) {
+															compra_car_fila('agregar', cat_id, 1, precos);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "cotizacion":
+					case "venta":
+						if (is_modal_open('div_venta_form1')) {
+															venta_car_fila('agregar', cat_id, 1, preven);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "pedido":
+						if (is_modal_open('div_pedido_form1')) {
+															pedido_car_fila('agregar', cat_id, 1, preven);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "notaalmacen":
+						if (is_modal_open('div_notaalmacen_form')) {
+															notaalmacen_car_fila('insertar', cat_id, 1);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "productopack":
+						if (is_modal_open('div_producto_form')) {
+							$('#hdd_bus_cat_id').val(cat_id);
+															$('#txt_bus_cat_can').val(1)
+								producto_guardar('guardar');
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "preciogestion":
+						// if (is_modal_open('div_producto_form')) {
+							$( "#txt_fil_pro_nom" ).val(nom);
+							preciogestion_tabla();
+																								$('#div_producto_modal_consulta').dialog("close");
+																					// }
+						break;
+					case "traspaso":
+						if (is_modal_open('div_traspaso_form')) {
+															traspaso_car_fila('insertar', cat_id, 1);
+																	$('#div_producto_modal_consulta').dialog("close");
+																					}
+						break;
+					case "kardex":
+						catalogo_buscar(); break;
+				}
+			}
+
+			function is_modal_open(divFormID) {
+				if ($('#'+divFormID).dialog("isOpen")) {
+					return true;
+				} else {
+					showAlert('Abra el formulario de registro para agregar el producto seleccionado', false);
+					return false;
+				}
+			}
+
+			function show_msj_modalconsulta(msj, est) {
+				if ($('#div_producto_modal_consulta').dialog("isOpen")) showAlert(msj, est);
+			}
+			
+			//MODAL DE PRODUCTOS
+			function producto_modal(){
+				$.ajax({
+					type: "POST",
+					url: "../producto/producto_modal_consulta.php",
+					async:true,
+					dataType: "html",
+					data: ({
+					}),
+					beforeSend: function() {
+						$('#div_producto_modal_consulta').dialog("open");
+						$('#div_producto_modal_consulta').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+					},
+					success: function(html){
+						$('#div_producto_modal_consulta').html(html);
+					}
+				});
+			}
+			
+			//MODAL DE PRODUCTOS
+			function show_espera(msj='Guardando...', isOpen='show'){
+				isOpen = isOpen=='show' ? 'block' : 'none';
+				var modal = document.getElementById("loadingModal");
+				// $('#div_modal_espera').dialog(isOpen);
+				modal.style.display = isOpen;
+				$('#contenido_alerta').html(msj);
+			}
+
+			// MODAL DE MANUAL
+			function manual_modal(idf,men_url,manfil_ids,url){
+				var modulo = window.location.pathname.split('/').reverse()[1];
+				$.ajax({
+					type: "POST",
+					url: "https://manual.okfacturacion.com/app/modulos/menufile/menu_file_manual.php",
+					async:true,
+					dataType: "html",
+					data: ({
+						menu_id: idf,
+						menu_url: men_url,
+						modulo: modulo,
+						manfil_ids: manfil_ids,
+						url_api: 'https://manual.okfacturacion.com/app',
+						url: 'http://espetronort.okserver44.com'
+					}),
+					beforeSend: function() {
+						$('#div_menu_manual').dialog("open");
+						$('#div_menu_manual').html('Cargando <img src="../../images/loadingf11.gif" align="absmiddle"/>');
+					},
+					success: function(html){
+						$('#div_menu_manual').html(html);
+					}
+				});
+			}
+
+			function verificar_redireccionamiento(tipo) {
+				$.ajax({
+					type: "POST",
+					url: "../contenido/verificar_redireccionamiento.php",
+					async:true,
+					dataType: "json",
+					data: ({
+						tipo: 'movil'
+					}),
+					success: function(data){
+						if (data.est) {
+							window.location.href = data.url;
+						} else {
+							window.showAlert(data.msj, data.est);
+						}
+					}
+				});
+			}
+			
+			document.onkeydown = function(ev){
+				var is_ctrlkey = ev.ctrlKey, 
+					tecla = ev.keyCode || ev.which;
+
+				if (tecla == 121 || (is_ctrlkey && String.fromCharCode(tecla) == 'F')){
+					producto_modal();
+					return false;
+				}
+			}
+
+			$(document).on('click', function(ev) {
+				if ($('#dropdownUserContent').is(':visible')) {
+					$('#dropdownUserContent').hide();
+				}
+
+				if ($('#dropdownSupportContent').is(':visible')) {
+					$('#dropdownSupportContent').hide();
+				}
+
+				if ($('#dropdownNotificationContent').is(':visible')) {
+					$('#dropdownNotificationContent').hide();
+				}
+			});
+
+			$('#btnDropdownUserContent').on('click', function(ev) {
+				if (!$('#dropdownUserContent').is(':visible')) {
+					setTimeout(() => $('#dropdownUserContent').show(), 1);
+				}
+			});
+
+			$('#btnDropdownSupportContent').on('click', function(ev) {
+				if (!$('#dropdownSupportContent').is(':visible')) {
+					setTimeout(() => $('#dropdownSupportContent').show(), 1);
+				}
+			});
+
+			$('#btnDropdownNotificationContent, .notification-ind').on('click', function(ev) {
+				if (!$('#dropdownNotificationContent').is(':visible')) {
+					setTimeout(() => $('#dropdownNotificationContent').show(), 1);
+				}
+			});
+		</script>
+		</footer>
+<div>	
+
+
+
+
+
+<style>
+	.colorEmpresa{
+		width: 100%;
+		height:2px;
+		background-color:#0762ba;
+		border-radius:2px;
+	}
+    .rotate {
+            animation: rotate 2s linear infinite;
+    }
+        
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-10px);
+		}
+		60% {
+			transform: translateY(-5px);
+		}
+	}
+
+	.bounce {
+		animation: bounce 1s infinite;
+	}
+</style>
+</div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_venta_alert_mon" aria-labelledby="ui-id-1" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Información Monto Caja</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_alert_mon" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_form" aria-labelledby="ui-id-2" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Información de Venta</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_modal_det" aria-labelledby="ui-id-3" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-3" class="ui-dialog-title">Información de Stock - Almacenes</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_modal_det" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="confirmModal" aria-labelledby="ui-id-4" style="height: auto; width: 350px; top: 0px; left: 545px; z-index: 102; display: none;"><div id="confirmModal" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 138px; max-height: none; height: auto;">
+				<div style="text-align: center; padding: 1rem;">
+					<div><i class="fa fa-check fa-3x bounce" style="color:#00ccab"></i></div>
+					<div style="margin-bottom: 1rem;">
+						<p style="font-size:17px;font-weight: bold;">¿Desea registrar la venta?</p>
+					</div>
+						
+					<div>
+						<button type="button" class="btn btn-sm btn-outline-confirm" onclick="verificar_onsubmit();$('#confirmModal').dialog('close');">Guardar</button>
+						<button type="button" class="btn btn-sm btn-outline-cancel" onclick="$('#confirmModal').dialog('close'); foco();">Cancelar</button>
+					</div>
+				</div>
+			</div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="confirmModalAnulacion" aria-labelledby="ui-id-5" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-5" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="confirmModalAnulacion" class="ui-dialog-content ui-widget-content">
+				<div style="text-align: center; padding: 1rem; display: none;">
+					<div><i class="fa fa-exclamation fa-3x bounce" style="color:#ff3b6f"></i></div>
+					<div style="margin-bottom: 1rem;">
+						<p style="font-size:17px;font-weight: bold;" id="title"></p>
+						<h3>Se actualizará el stock: asegúrese que las cantidades de producto se puedan reponer correctamente. ¿Desea continuar?</h3>
+					</div>
+					<div>
+						<button type="button" class="btn btn-sm btn-outline-confirm" onclick="procesar_anulacion();$('#confirmModalAnulacion').dialog('close');">Sí</button>
+						<button type="button" class="btn btn-sm btn-outline-cancel" onclick="$('#confirmModalAnulacion').dialog('close'); foco();">No</button>
+					</div>
+				</div>
+			</div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front my-custom-dialog ui-dialog-buttons ui-draggable" aria-describedby="div_venta_form1" aria-labelledby="ui-id-6" style="height: auto; width: 1030px; top: 0px; left: 205px; z-index: 101; display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-6" class="ui-dialog-title">Registrar Venta</span><a class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Nueva venta" style="color: #0070a3 !important; right: 1.75rem !important; margin-top: -7px;" target="_blank" href="../venta/?&amp;open=true"><i class="fa fa-window-restore"></i></a><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_form1" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 63.4844px; max-height: none; height: auto;">venta_form1</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_ven_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_ven_guardar" class="btnx btnx-success btnx-smMd" style="">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front my-custom-dialog ui-dialog-buttons ui-draggable" aria-describedby="div_venta_form2" aria-labelledby="ui-id-7" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-7" class="ui-dialog-title">Registrar Venta</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_form2" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_ven_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_ven_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_venta_impresion" aria-labelledby="ui-id-8" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-8" class="ui-dialog-title">Que desea hacer?</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_impresion" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_correo_form" aria-labelledby="ui-id-9" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-9" class="ui-dialog-title">Enviar por Correo</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_correo_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button><button type="button" id="btn_ven_correo" class="btnx btnx-secondary btnx-smMd">Enviar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_correo_form_modal" aria-labelledby="ui-id-10" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-10" class="ui-dialog-title">Enviar por Correo</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_correo_form_modal" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button><button type="button" id="btn_ven_correo" class="btnx btnx-secondary btnx-smMd">Enviar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_email" aria-labelledby="ui-id-11" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-11" class="ui-dialog-title">Detalle de Correos</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_email" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_ingreso_form" aria-labelledby="ui-id-12" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-12" class="ui-dialog-title">Información de Ingreso</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_ingreso_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd" id="btn_ing_cancelar">Cerrar</button><button type="button" id="btn_ing_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_venta_enviowsp_form" aria-labelledby="ui-id-13" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-13" class="ui-dialog-title">Enviar por WhatsApp</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_enviowsp_form" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_producto_form" aria-labelledby="ui-id-14" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-14" class="ui-dialog-title">Información de Artículo</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_producto_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd" id="btn_pro_cancelar">Cerrar</button><button type="button" id="btn_pro_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_confirmacion_form" aria-labelledby="ui-id-15" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-15" class="ui-dialog-title">Confirmación de acción</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_confirmacion_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button><button type="button" id="btn_con_guardar" class="btnx btnx-success btnx-smMd">Aceptar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_file_form" aria-labelledby="ui-id-16" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-16" class="ui-dialog-title">Información de Subir Archivo</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_file_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_file_carpeta_form" aria-labelledby="ui-id-17" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-17" class="ui-dialog-title">Actualizar Carpeta</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_file_carpeta_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button><button type="button" id="btn_file_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_modal_detpre" aria-labelledby="ui-id-18" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-18" class="ui-dialog-title">Información de Últimos Precios</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_modal_detpre" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_file_catalogo" aria-labelledby="ui-id-19" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-19" class="ui-dialog-title">Catalogo de Imagenes</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_file_catalogo" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd btnx-secondary">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_producto_modal_consulta" aria-labelledby="ui-id-20" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-20" class="ui-dialog-title">Búsqueda avanzada de productos</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_producto_modal_consulta" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_menu_manual" aria-labelledby="ui-id-21" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-21" class="ui-dialog-title">Ayuda del sistema</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_menu_manual" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-secondary btnx-smMd">Cerrar</button></div></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="&lt; Ant"><span class="ui-icon ui-icon-circle-triangle-w">&lt; Ant</span></a><a class="ui-datepicker-next ui-corner-all ui-state-disabled" title="Sig &gt;"><span class="ui-icon ui-icon-circle-triangle-e">Sig &gt;</span></a><div class="ui-datepicker-title"><select class="ui-datepicker-month" aria-label="Select month" data-handler="selectMonth" data-event="change"><option value="9" selected="selected">Oct</option></select><select class="ui-datepicker-year" aria-label="Select year" data-handler="selectYear" data-event="change"><option value="2025" selected="selected">2025</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col"><span title="Lunes">Lu</span></th><th scope="col"><span title="Martes">Ma</span></th><th scope="col"><span title="Miércoles">Mi</span></th><th scope="col"><span title="Jueves">Ju</span></th><th scope="col"><span title="Viernes">Vi</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Sábado">Sá</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Domingo">Do</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-week-end ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="9" data-year="2025"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#" aria-current="true" data-date="5">5</a></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">16</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">17</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">18</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">19</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">20</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">22</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">23</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">24</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">25</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">26</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">27</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">28</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">29</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">30</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">31</span></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><ul id="ui-id-22" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_form_opciones" aria-labelledby="ui-id-23" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-23" class="ui-dialog-title">Opciones adicionales</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_form_opciones" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_foropc_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_foropc_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_pago_form" aria-labelledby="ui-id-24" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-24" class="ui-dialog-title">Forma de pago</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_pago_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_for_pag_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_for_pag_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_tipocambio_form" aria-labelledby="ui-id-25" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-25" class="ui-dialog-title">Información de Tipo de Cambio</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_tipocambio_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_for_tip_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_for_tip_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_cuotas_form" aria-labelledby="ui-id-26" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-26" class="ui-dialog-title">Información de cuotas</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_cuotas_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_for_cuo_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_for_cuo_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_calendar_form" aria-labelledby="ui-id-29" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-29" class="ui-dialog-title">Información de Reserva</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_calendar_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-secondary btnx-smMd">Cerrar</button><button type="button" id="btn_cal_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_cliente_form" aria-labelledby="ui-id-30" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-30" class="ui-dialog-title">Información de Cliente</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_cliente_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_for_cli_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_for_cli_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_preordencompra_producto_form" aria-labelledby="ui-id-31" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-31" class="ui-dialog-title">Información de Pre-órdenes de compra</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_preordencompra_producto_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_for_preord_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_for_preord_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_equivalente" aria-labelledby="ui-id-36" style="height: auto; width: 350px; top: 0px; left: 545px; z-index: 102; display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-36" class="ui-dialog-title">EQUIVALENTE</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_equivalente" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 63.4844px; max-height: none; height: auto;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd" id="btn_pro_cancelar">Cerrar</button><button type="button" id="btn_pro_validar" class="btnx btnx-secondary btnx-smMd">Calcular</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_equivalente_eq" aria-labelledby="ui-id-37" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-37" class="ui-dialog-title">EQUIVALENTE</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_equivalente_eq" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd" id="btn_pro_cancelar">Cancelar</button><button type="button" id="btn_pro_validar" class="btnx btnx-secondary btnx-smMd">Calcular</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_venta_medida_cubicacion" aria-labelledby="ui-id-38" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-38" class="ui-dialog-title">Precio en Pie Tablar</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_medida_cubicacion" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_pintura" aria-labelledby="ui-id-39" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-39" class="ui-dialog-title">Equivalente</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_pintura" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_pin_can" class="btnx btnx-secondary btnx-smMd">Cerrar</button><button type="button" id="btn_pin_agr" class="btnx btnx-secondary btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable" aria-describedby="div_producto_sin_stock" aria-labelledby="ui-id-40" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-40" class="ui-dialog-title">Los Siguientes Productos sin Stock</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_producto_sin_stock" class="ui-dialog-content ui-widget-content"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_lote_form" aria-labelledby="ui-id-41" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-41" class="ui-dialog-title">Información de Lote</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_lote_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_form_lot_cancelar" class="btnx btnx-light btnx-smMd">Eliminar</button><button type="button" id="btn_form_lot_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_venta_stock_almacen" aria-labelledby="ui-id-42" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-42" class="ui-dialog-title">Información de Stock de Producto</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_venta_stock_almacen" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="btnx btnx-light btnx-smMd" id="btn_for_cli_cancelar">Cerrar</button></div></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable" aria-describedby="div_talonario_form" aria-labelledby="ui-id-43" style="display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-43" class="ui-dialog-title">Información de Talonario</span><button type="button" class="ui-button ui-corner-all ui-dialog-titlebar-close" title="Close"><i class="fa fa-times"></i></button></div><div id="div_talonario_form" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btn_tal_cancelar" class="btnx btnx-light btnx-smMd">Cerrar</button><button type="button" id="btn_tal_guardar" class="btnx btnx-success btnx-smMd">Guardar</button></div></div></div><div class="alert-cs-container alert-cs-right-top"></div></body></html>
